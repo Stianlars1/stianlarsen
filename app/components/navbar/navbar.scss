@@ -1,0 +1,25 @@
+header {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+  align-items: center;
+  height: 80px;
+
+  ul {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    gap: 1rem;
+
+    li {
+      list-style-type: none;
+      margin: 0;
+      padding: 8px 12px;
+
+      a {
+      }
+    }
+  }
+}
