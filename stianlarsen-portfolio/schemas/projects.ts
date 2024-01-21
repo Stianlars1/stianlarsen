@@ -18,6 +18,7 @@ export default {
     },
 
     {name: 'titleImage', type: 'image', title: 'Title image'},
+    {name: 'previewLogo', type: 'image', title: 'Logo image'},
     {name: 'imageDescription', type: 'text', title: 'Image description'},
     {name: 'smallDescription', type: 'text', title: 'Small description'},
     {name: 'bigDescription', type: 'text', title: 'Big description'},

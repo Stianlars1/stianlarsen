@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Footer } from "./components/footer/footer";
 import { Navbar } from "./components/navbar/navbar";
+import { ThemeProvider } from "./components/theme-provider";
 import { roboto_mono } from "./fonts";
 import "./globals.css";
 
@@ -37,6 +38,7 @@ export const metadata: Metadata = {
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
     { media: "(prefers-color-scheme: dark)", color: "#000000" },
   ],
+
   alternates: {
     canonical: "https://www.stianlarsen.com",
   },
@@ -49,10 +51,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={roboto_mono.className}>
-        <Navbar />
-        {children}
-        <Footer />
+      <body className={`${roboto_mono.className}`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+
+          <main className={`max-w-5xl mx-auto px-5`}>{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

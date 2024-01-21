@@ -1,6 +1,6 @@
 export const Footer = () => {
   const footerCopyright = getFooterCopyright();
-  return <footer>{footerCopyright}</footer>;
+  return <footer className="max-w-5xl mx-auto px-5">{footerCopyright}</footer>;
 };
 
 const getFooterCopyright = () => {
