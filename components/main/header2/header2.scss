@@ -1,0 +1,75 @@
+.main-header {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 124px 0;
+    position: relative;
+
+    &__h1 {
+      font-size: 6.5rem;
+      font-weight: 800;
+      color: hsl(var(--primary));
+      text-wrap: balance;
+      line-height: 115px;
+      position: relative;
+      max-width: 800px;
+      //   transform: translateY(-20px);
+      //   animation: h1FadeDown 1.5s ease 0.5s forwards;
+
+      //   &__animation {
+      //     opacity: 0;
+      //   }
+
+      //   .hello {
+      //     animation: fadeDown 1s ease 0.3s forwards;
+      //   }
+
+      //   .im-stian {
+      //     animation: fadeDown 1s ease 1s forwards;
+      //   }
+
+      //   .fullstack-web-developer {
+      //     animation: fadeDown 1s ease 1.7s forwards;
+      //   }
+      // }
+    }
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    left: 0;
+    right: 0;
+    bottom: 0; // Cuts the gradient in half
+    background: radial-gradient(
+      circle 600px at top,
+      rgba(35, 35, 183, 0.589) -100%,
+      transparent 80%
+    );
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    transform: scaleX(150%);
+    z-index: -1;
+  }
+}
+
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes h1FadeDown {
+  0% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

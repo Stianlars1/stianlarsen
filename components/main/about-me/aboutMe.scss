@@ -1,0 +1,56 @@
+.about-me {
+  margin-top: 84px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1024px;
+
+  &__h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    &__image {
+      border-radius: 50%;
+      border: 2px solid hsl(var(--primary));
+    }
+
+    &__article {
+      flex-shrink: 1;
+      max-width: 600px;
+      display: flex;
+      text-wrap: wrap;
+      text-align: left;
+
+      > p {
+        flex-shrink: 1;
+        color: hsl(var(--primary-foreground));
+        color: #333; // Change to your preferred text color
+        font-size: 1.1rem; // Adjust font size as needed
+        line-height: 1.6; // Improves readability
+        margin: 0 0 20px; // Adjust spacing as needed
+        font-weight: 400; // Adjust font weight as preferred
+        text-wrap: wrap;
+
+        @media (max-width: 768px) {
+          font-size: 1rem; // Smaller font size on smaller screens
+        }
+
+        &:first-letter {
+          font-size: 1.4rem; // Stylish first letter
+          font-weight: bold; // Bold first letter
+          color: hsl(var(--primary)); // Highlight color for first letter
+        }
+      }
+    }
+  }
+}

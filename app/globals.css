@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  scroll-behavior: smooth;
+  @apply bg-background;
 }
 
 @layer base {
@@ -58,6 +58,6 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: hsl(var(--background));
   }
 }

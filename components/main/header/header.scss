@@ -1,0 +1,29 @@
+.main-header {
+  width: 100%;
+  height: calc(80vh - 100px);
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 124px 0;
+    position: relative;
+
+    &__h1 {
+      > div {
+        span {
+          font-size: 5rem;
+          font-weight: 800;
+          color: hsl(var(--primary));
+          //max-width: 950px;
+
+          &:nth-child(1) {
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}

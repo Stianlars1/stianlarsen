@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Footer } from "./components/footer/footer";
-import { Navbar } from "./components/navbar/navbar";
-import { ThemeProvider } from "./components/theme-provider";
 import { roboto_mono } from "./fonts";
+
+import { Footer } from "@/components/main/footer/footer";
+import { Navbar2 } from "@/components/main/navbar2/navbar2";
+import { ThemeProvider } from "@/components/main/theme-provider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
     "Coding Portfolio",
     "Development Projects",
   ],
+
   openGraph: {
     type: "website",
     url: "https://www.stianlarsen.com",
@@ -34,10 +36,6 @@ export const metadata: Metadata = {
     ],
     siteName: "StianLarsen",
   },
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#000000" },
-  ],
 
   alternates: {
     canonical: "https://www.stianlarsen.com",
@@ -50,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${roboto_mono.className}`}>
         <ThemeProvider
           attribute="class"
@@ -58,10 +56,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-
-          <main className={`max-w-5xl mx-auto px-5`}>{children}</main>
-          <Footer />
+          <>
+            <Navbar2 />
+            <main>{children}</main>
+            <Footer />
+          </>
         </ThemeProvider>
       </body>
     </html>

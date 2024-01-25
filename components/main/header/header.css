@@ -1,0 +1,21 @@
+.main-header {
+  width: 100%;
+  height: calc(80vh - 100px);
+}
+.main-header__wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 124px 0;
+  position: relative;
+}
+.main-header__wrapper__h1 > div span {
+  font-size: 5rem;
+  font-weight: 800;
+  color: hsl(var(--primary));
+}
+.main-header__wrapper__h1 > div span:nth-child(1) {
+  font-weight: 500;
+}/*# sourceMappingURL=header.css.map */

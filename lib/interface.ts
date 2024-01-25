@@ -4,4 +4,5 @@ interface PreviewProjectsType {
   currentSlug: string;
   titleImage: any;
   previewLogo: any;
+  previewLogoBackgroundColor: string;
 }

@@ -19,6 +19,11 @@ export default {
 
     {name: 'titleImage', type: 'image', title: 'Title image'},
     {name: 'previewLogo', type: 'image', title: 'Logo image'},
+    {
+      name: 'previewLogoBackgroundColor',
+      type: 'string',
+      title: 'Primary color of the logo image (HEX value)',
+    },
     {name: 'imageDescription', type: 'text', title: 'Image description'},
     {name: 'smallDescription', type: 'text', title: 'Small description'},
     {name: 'bigDescription', type: 'text', title: 'Big description'},
