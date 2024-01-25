@@ -1,16 +1,20 @@
 "use client";
 
+import { useIsDarkmodeActive } from "@/lib/useIsDarkmodeActive";
 import { PointMaterial, Points } from "@react-three/drei";
 import { Canvas, extend, useFrame } from "@react-three/fiber";
 import { Suspense, useEffect, useRef, useState } from "react";
 import { PerspectiveCamera } from "three";
+import "./starBackground.css";
 extend({ PerspectiveCamera });
 
 // @ts-ignore
 import * as random from "maath/random/dist/maath-random.esm";
 
 const StarBackground = (props: any) => {
+  console.log("StarBackground");
   const ref: any = useRef();
+  const { isDarkmodeActive } = useIsDarkmodeActive();
   const [sphere] = useState(() =>
     random.inSphere(new Float32Array(5000), { radius: 1.2 })
   );
@@ -25,7 +29,7 @@ const StarBackground = (props: any) => {
       <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
         <PointMaterial
           transparent
-          color="#fff"
+          color={isDarkmodeActive ? "#fff" : "#000"}
           size={0.0022}
           sizeAttenuation={true}
           dethWrite={false}
@@ -35,6 +39,7 @@ const StarBackground = (props: any) => {
   );
 };
 const StarsCanvas = () => {
+  console.log("StarsCanvas");
   // Define the ref with the correct type
   const cameraRef = useRef<PerspectiveCamera>(null);
 

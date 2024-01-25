@@ -3,16 +3,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: transparent;
   padding: 0 1.2rem;
-  position: sticky;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-image: radial-gradient(rgba(0, 0, 0, 0) 1px, white 1px);
-  background-size: 4px 4px;
-  -webkit-backdrop-filter: blur(6px);
-          backdrop-filter: blur(6px);
-  z-index: 10;
+  z-index: 100000000;
   overflow: auto;
 }
 .navbar-header .navbar {
@@ -57,8 +50,4 @@
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   z-index: -1;
-}
-
-[class=dark] .navbar-header .navbar {
-  background-image: radial-gradient(rgba(255, 255, 255, 0) 1px, rgba(0, 0, 0, 0.18) 1px);
 }/*# sourceMappingURL=navbar.css.map */

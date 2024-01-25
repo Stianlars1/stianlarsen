@@ -1,0 +1,16 @@
+.scroll-down-icon {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+  margin-bottom: 32px;
+}
+.scroll-down-icon svg {
+  width: 24px;
+  height: 24px;
+  animation: bounce 2s infinite;
+  cursor: pointer;
+}
+.scroll-down-icon:hover svg {
+  animation: none;
+}/*# sourceMappingURL=scrollDownIcon.css.map */

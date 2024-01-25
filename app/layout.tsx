@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { roboto_mono } from "./fonts";
 
 import { Footer } from "@/components/main/footer/footer";
-import { Navbar2 } from "@/components/main/navbar2/navbar2";
-import { ThemeProvider } from "@/components/main/theme-provider";
+import { Navbar } from "@/components/main/navbar/navbar";
 import "./globals.css";
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: "Stian Larsen | Fullstack Developer | Portfolio",
@@ -50,18 +50,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${roboto_mono.className}`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <>
-            <Navbar2 />
-            <main>{children}</main>
-            <Footer />
-          </>
-        </ThemeProvider>
+        <Providers>
+          <Navbar />
+          <main className="px-[20px]">{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
