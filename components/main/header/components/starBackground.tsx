@@ -30,7 +30,7 @@ const StarBackground = (props: any) => {
         <PointMaterial
           transparent
           color={isDarkmodeActive ? "#fff" : "#000"}
-          size={0.0022}
+          size={0.0055}
           sizeAttenuation={true}
           dethWrite={false}
         />
@@ -44,13 +44,14 @@ const StarsCanvas = () => {
   const cameraRef = useRef<PerspectiveCamera>(null);
 
   const handleScroll = () => {
-    const scrollY = parseFloat(`-${window.scrollY}`);
+    const scrollY = window.scrollY;
     // Adjust this to control how quickly the camera moves towards the sphere
     const scrollFactor = 500;
 
     // Start at 10 and move towards 1 as the user scrolls down
-    const newZ = Math.max(1, 1 - scrollY / scrollFactor);
+    const newZ = Math.max(1, 1 + scrollY / scrollFactor);
     if (cameraRef.current) {
+      console.log("newZ", newZ)
       cameraRef.current.position.z = newZ;
     }
   };
@@ -68,7 +69,7 @@ const StarsCanvas = () => {
       <Canvas>
         <perspectiveCamera ref={cameraRef} position={[0, 0, 1]}>
           <Suspense fallback={null}>
-            <StarBackground />
+            <StarBackground  />
           </Suspense>
         </perspectiveCamera>
       </Canvas>

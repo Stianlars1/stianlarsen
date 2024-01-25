@@ -52,6 +52,9 @@
       nav {
         ul {
           position: relative;
+          li {
+            font-size: .875rem;
+          }
           &::after {
             content: "";
             position: absolute;

@@ -38,6 +38,9 @@
 .navbar-header .navbar .ul-wrapper nav ul {
   position: relative;
 }
+.navbar-header .navbar .ul-wrapper nav ul li {
+  font-size: 0.875rem;
+}
 .navbar-header .navbar .ul-wrapper nav ul::after {
   content: "";
   position: absolute;
