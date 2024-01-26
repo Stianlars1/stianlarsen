@@ -1,1 +1,1 @@
-{"version":3,"sources":["scrollDownIcon.scss","scrollDownIcon.css"],"names":[],"mappings":"AAAA;EACE,cAAA;EACA,aAAA;EACA,uBAAA;EACA,oBAAA;EACA,mBAAA;ACCF;ADCE;EACE,WAAA;EACA,YAAA;EACA,6BAAA;EAEA,eAAA;ACAJ;ADII;EACE,eAAA;ACFN","file":"scrollDownIcon.css"}
+{"version":3,"sources":["scrollDownIcon.scss","scrollDownIcon.css"],"names":[],"mappings":"AAAA;EACE,cAAA;EACA,aAAA;EACA,uBAAA;EACA,oBAAA;EACA,mBAAA;EACA,cAAA;ACCF;ADCE;EACE,WAAA;EACA,YAAA;EACA,6BAAA;EAEA,eAAA;ACAJ;ADII;EACE,eAAA;ACFN","file":"scrollDownIcon.css"}

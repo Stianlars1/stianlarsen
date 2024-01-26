@@ -8,6 +8,8 @@
 
 body {
   @apply bg-background;
+  overflow-x: hidden;
+  overflow-y: visible;
 }
 
 @layer base {

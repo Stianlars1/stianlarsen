@@ -1,0 +1,9 @@
+.canvas {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  will-change: auto;
+}
+
+.showCanvas {
+  opacity: 1;
+}

@@ -7,19 +7,33 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: hsl(var(--background));
+  z-index: 10000;
 }
 
 .progress-container {
-  width: 100%;
-  height: 10px;
+  width: 300px;
+  height: 30px;
   background-color: #ccc;
   border-radius: 5px;
-  overflow: hidden;
+  margin-bottom: 200px;
+  position: relative;
 }
-
-.progress-bar {
+.progress-container .progress-bar {
+  position: absolute;
   height: 100%;
-  width: 0%;
-  background-color: #333;
-  transition: width 0.5s ease-in-out;
+  background-color: hsl(var(--primary));
+  transition: width 0.23s ease-in-out;
+}
+.progress-container .progress-timer {
+  position: absolute;
+  top: calc(100% + 4px);
+  font-size: 1rem;
+  color: hsl(var(--foreground));
+}
+.progress-container .title {
+  position: absolute;
+  bottom: calc(100% + 4px);
+  font-size: 0.875rem;
+  color: hsl(var(--foreground));
 }/*# sourceMappingURL=loadingScreen.css.map */

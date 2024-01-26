@@ -4,37 +4,46 @@ import { Parallax } from "react-scroll-parallax";
 import { HeaderH1Title } from "./components/h1";
 import { ScrollDownIcon } from "./components/scrollDownIcon/scrollDownIcon";
 
-import { useStore } from "@/lib/state";
+import { useEffect, useState } from "react";
+import ProgressBarLoadingScreen from "./components/loadingScreen/loadingScreen";
 import "./header.css";
 
-
 export const Header = () => {
-const setIsAnimationLoadingFalse = useStore((state) => state.setIsAnimationLoadingFalse)
-const isAnimationLoading = useStore((state) => state.isAnimationLoading)
-console.log(isAnimationLoading)
+  const [isAnimationLoading, setIsAnimationLoading] = useState(true);
+  const [showContent, setShowContent] = useState(false);
 
-
+  useEffect(() => {
+    if (!isAnimationLoading) {
+      setTimeout(() => {
+        setShowContent(true);
+      }, 0);
+    }
+  }, [isAnimationLoading]);
 
   return (
     <>
-
-  <motion.section
-  style={{display: isAnimationLoading ? "none" : "block"}}
-  initial="hidden"
-  animate="visible"
-  className="main-header"
-  onAnimationStart={() => setIsAnimationLoadingFalse()}
-  
-  >
-  <Parallax speed={30} className="main-header__wrapper">
-  <HeaderH1Title className="main-header__wrapper__h1" />
-  </Parallax>
-  <ScrollDownIcon />
-  </motion.section>
-  
+      {isAnimationLoading && (
+        <ProgressBarLoadingScreen timer={isAnimationLoading ? 48 : 89} />
+      )}
+      <motion.section
+        style={{ display: isAnimationLoading ? "none" : "flex" }}
+        initial="hidden"
+        animate="visible"
+        className="main-header"
+        onAnimationStart={() => setIsAnimationLoading(false)}
+      >
+        <Parallax
+          speed={30}
+          className="main-header__wrapper"
+          scale={[1, 4, "easeOutQuad"]}
+          startScroll={0}
+          translateY={[0, -500]}
+          endScroll={800}
+        >
+          <HeaderH1Title className="main-header__wrapper__h1" />
+        </Parallax>
+        <ScrollDownIcon />
+      </motion.section>
     </>
   );
 };
-
-
-

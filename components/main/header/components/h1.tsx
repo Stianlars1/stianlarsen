@@ -24,7 +24,7 @@ export const HeaderH1Title = ({ className }: { className: string }) => {
           startY: -20,
           endY: 0,
           duration: 1,
-          delay: 0,
+          delay: 0.3,
         })}
         className={className}
       >

@@ -12,16 +12,21 @@ extend({ PerspectiveCamera });
 import * as random from "maath/random/dist/maath-random.esm";
 
 const StarBackground = (props: any) => {
-  console.log("StarBackground");
   const ref: any = useRef();
   const { isDarkmodeActive } = useIsDarkmodeActive();
+  const [delta, setDelta] = useState(0);
   const [sphere] = useState(() =>
     random.inSphere(new Float32Array(5000), { radius: 1.2 })
   );
 
+  const scrollPos = props && props.scrollPosition;
+
   useFrame((state, delta) => {
-    ref.current.rotation.x -= delta / 10;
-    ref.current.rotation.y -= delta / 15;
+    const pos1 = scrollPos > 2.5 ? 200 : scrollPos > 2 ? 100 : 10;
+    const pos2 = scrollPos > 2.5 ? 250 : scrollPos > 2 ? 150 : 15;
+    setDelta(delta);
+    ref.current.rotation.x -= delta / pos1;
+    ref.current.rotation.y -= delta / pos2;
   });
 
   return (
@@ -30,7 +35,7 @@ const StarBackground = (props: any) => {
         <PointMaterial
           transparent
           color={isDarkmodeActive ? "#fff" : "#000"}
-          size={0.0055}
+          size={scrollPos > 2.5 ? 0.0011 : scrollPos > 2 ? 0.0022 : 0.0055}
           sizeAttenuation={true}
           dethWrite={false}
         />
@@ -39,7 +44,8 @@ const StarBackground = (props: any) => {
   );
 };
 const StarsCanvas = () => {
-  console.log("StarsCanvas");
+  const [showCanvas, setShowCanvas] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(1);
   // Define the ref with the correct type
   const cameraRef = useRef<PerspectiveCamera>(null);
 
@@ -51,10 +57,14 @@ const StarsCanvas = () => {
     // Start at 10 and move towards 1 as the user scrolls down
     const newZ = Math.max(1, 1 + scrollY / scrollFactor);
     if (cameraRef.current) {
-      console.log("newZ", newZ)
+      setScrollPosition(newZ);
       cameraRef.current.position.z = newZ;
     }
   };
+
+  setTimeout(() => {
+    setShowCanvas(true);
+  }, 800);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -65,11 +75,15 @@ const StarsCanvas = () => {
   }, []);
 
   return (
-    <div className="w-full h-auto fixed inset-0 z-[-1] pointer-events-none ">
+    <div
+      className={`w-full h-auto fixed inset-0 z-[-1] pointer-events-none canvas ${
+        showCanvas ? "showCanvas" : ""
+      }`}
+    >
       <Canvas>
         <perspectiveCamera ref={cameraRef} position={[0, 0, 1]}>
           <Suspense fallback={null}>
-            <StarBackground  />
+            {showCanvas && <StarBackground scrollPosition={scrollPosition} />}
           </Suspense>
         </perspectiveCamera>
       </Canvas>
