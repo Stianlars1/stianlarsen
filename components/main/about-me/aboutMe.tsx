@@ -6,7 +6,7 @@ import {
   useTransform,
 } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { Parallax } from "react-scroll-parallax";
 import "./aboutMe.css";
 
@@ -19,31 +19,20 @@ export const AboutMe = () => {
   const clipProgress = useTransform(scrollYProgress, [0, 1], [100, 0]);
   const clip = useMotionTemplate`inset(0 ${clipProgress}% 0 0)`;
 
-  useEffect(() => {
-    console.log("scroll Progress: ", scrollYProgress);
-    console.log("scrollY Progress: ", scrollY);
-    console.log("clipProgress Progress: ", clipProgress);
-  }, [scrollY, scrollYProgress, clipProgress]);
   return (
-    <Parallax
-      id="about-me"
-      speed={-10}
-      className="about-me"
-      itemRef="container"
-      translateY={[-100, 0]}
-      scale={[0, 3]}
-    >
+    <Parallax id="about-me" speed={15} className="about-me" itemRef="container">
       <motion.h2 style={{ clipPath: clip }} className="about-me__h2">
         About me
       </motion.h2>
       <div className="about-me__content">
-        <Parallax speed={15}>
+        <Parallax speed={12}>
           <Image
             src={"/STIAN_PHOTO.jpg"}
             alt="About me, Portrait photo of Stian's face close-up"
             width={300}
             height={300}
             className="about-me__content__image"
+            priority={false}
           />
         </Parallax>
         <motion.article

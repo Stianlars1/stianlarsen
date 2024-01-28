@@ -10,21 +10,10 @@ import "./header.css";
 
 export const Header = () => {
   const [isAnimationLoading, setIsAnimationLoading] = useState(true);
-  const [showContent, setShowContent] = useState(false);
-
-  useEffect(() => {
-    if (!isAnimationLoading) {
-      setTimeout(() => {
-        setShowContent(true);
-      }, 0);
-    }
-  }, [isAnimationLoading]);
 
   return (
     <>
-      {isAnimationLoading && (
-        <ProgressBarLoadingScreen timer={isAnimationLoading ? 48 : 89} />
-      )}
+      {isAnimationLoading && <ProgressBarLoadingScreen />}
       <motion.section
         style={{ display: isAnimationLoading ? "none" : "flex" }}
         initial="hidden"
