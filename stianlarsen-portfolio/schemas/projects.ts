@@ -19,6 +19,7 @@ export default {
 
     {name: 'titleImage', type: 'image', title: 'Title image'},
     {name: 'previewLogo', type: 'image', title: 'Logo image'},
+    {name: 'mockupImage', type: 'image', title: 'Mockup image'},
     {
       name: 'previewLogoBackgroundColor',
       type: 'string',

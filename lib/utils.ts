@@ -1,3 +1,5 @@
+"use client";
+
 import { clsx, type ClassValue } from "clsx";
 import { MotionValue, useTransform } from "framer-motion";
 import { twMerge } from "tailwind-merge";
@@ -17,9 +19,12 @@ export const handleScrollIntoView = (
   e.preventDefault();
   // get the href and remove everything before the hash (#)
   const href = e.currentTarget.href;
+  console.log(href);
   const targetId = href.replace(/.*\#/, "");
+  console.log(targetId);
   // get the element by id and use scrollIntoView
   const elem = document.getElementById(targetId);
+  console.log(elem);
   elem?.scrollIntoView({
     behavior: "smooth",
   });

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { HamburgerMenu } from "../hamburgerMenu/hamburgerMenu";
 import { ModeToggle } from "../modeToggle";
 import { FramerMotionNavbar } from "./components/framerMotionNavbar";
+import { NavItems } from "./components/nav";
 import "./navbar.css";
 
 export const Navbar = () => {
@@ -17,19 +18,7 @@ export const Navbar = () => {
           </div>
 
           <div className="flex justify-between items-center gap-4 ul-wrapper">
-            <nav>
-              <ul className="hidden justify-between align-middle gap-4  md:flex">
-                <li>
-                  <Link href={"/about-me"}>About me</Link>
-                </li>
-                <li>
-                  <Link href={"/projects"}>Projects</Link>
-                </li>
-                <li>
-                  <Link href={"/cv"}>CV</Link>
-                </li>
-              </ul>
-            </nav>
+            <NavItems />
             <ModeToggle />
             <HamburgerMenu />
           </div>

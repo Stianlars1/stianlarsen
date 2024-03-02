@@ -1,17 +1,38 @@
 "use client";
-import { slideInFromTopWithOptions } from "@/lib/motion";
-import { motion } from "framer-motion";
+import { Reveal } from "@/components/reveal";
+import { useWindowSize } from "@/lib/hooks/windowSize";
 import { ReactElement } from "react";
 
 export const HeaderH1Title = ({ className }: { className: string }) => {
+  const { windowWidth } = useWindowSize();
+
+  const isMobileSize = windowWidth < 500;
   const getH1Title = (): ReactElement => {
     return (
       <>
-        <span>Hello,</span> <span>I&apos;m Stian,</span>
-        <br />
-        <span>Full-Stack Web</span>
-        <br />
-        <span>Developer</span>
+        <Reveal type={"down"} delay={0.25}>
+          <>
+            {isMobileSize && (
+              <>
+                <span>
+                  Hello, I&apos;m Stian,{" "}
+                  <span style={{ whiteSpace: "nowrap" }}>Full-Stack </span>Web
+                  Developer
+                </span>
+              </>
+            )}
+
+            {!isMobileSize && (
+              <>
+                <span>Hello,</span> <span>I&apos;m Stian,</span>
+                <br />
+                <span>Full-Stack Web</span>
+                <br />
+                <span>Developer</span>
+              </>
+            )}
+          </>
+        </Reveal>
       </>
     );
   };
@@ -19,17 +40,7 @@ export const HeaderH1Title = ({ className }: { className: string }) => {
 
   return (
     <>
-      <motion.h1
-        variants={slideInFromTopWithOptions({
-          startY: -20,
-          endY: 0,
-          duration: 1,
-          delay: 0.3,
-        })}
-        className={className}
-      >
-        {h1Title}
-      </motion.h1>
+      <h1 className={className}>{h1Title}</h1>
     </>
   );
 };

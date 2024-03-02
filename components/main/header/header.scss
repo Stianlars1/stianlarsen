@@ -21,7 +21,6 @@
       font-size: 6.5rem;
       font-weight: 800;
       color: hsl(var(--primary));
-      text-wrap: balance;
       line-height: 110px;
       position: relative;
       max-width: 900px;
@@ -37,8 +36,8 @@
     content: "";
     position: absolute;
     top: calc(-100px - 142px);
-    left: 0;
-    right: 0;
+    left: -20px;
+    right: -20px;
     bottom: 0; // Cuts the gradient in half
     background: radial-gradient(
       circle 600px at top,
@@ -48,7 +47,7 @@
     background-size: 100% 100%;
     background-position: center top;
     background-repeat: no-repeat;
-    transform: scaleX(150%);
+    overflow: hidden;
     z-index: -1;
   }
 }
@@ -64,14 +63,7 @@
       line-height: 110px;
       position: relative;
       max-width: 900px;
-      text-wrap: balance;
       height: fit-content;
-
-      span {
-        &:nth-last-child(1) {
-          color: white;
-        }
-      }
     }
   }
 }
@@ -98,8 +90,32 @@
     padding: 60px 0 60px;
   }
   .main-header__wrapper__h1 {
-    font-size: 2.3rem;
-    line-height: 45px;
+    font-size: 3rem;
+    line-height: 50px;
+
+    span {
+      white-space: wrap;
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .main-header__wrapper__h1 {
+    font-size: 3rem;
+    line-height: 50px;
+
+    > div {
+      > div {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    span {
+      text-wrap: balance;
+      margin: 0 auto;
+      display: inline;
+      width: min-content;
+    }
   }
 }
 

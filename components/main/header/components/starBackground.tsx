@@ -22,8 +22,26 @@ const StarBackground = (props: any) => {
   const scrollPos = props && props.scrollPosition;
 
   useFrame((state, delta) => {
-    const pos1 = scrollPos > 2.5 ? 200 : scrollPos > 2 ? 100 : 10;
-    const pos2 = scrollPos > 2.5 ? 250 : scrollPos > 2 ? 150 : 15;
+    const pos1 =
+      scrollPos > 2.5
+        ? !isDarkmodeActive
+          ? 75
+          : 200
+        : scrollPos > 2
+        ? !isDarkmodeActive
+          ? 50
+          : 100
+        : 10;
+    const pos2 =
+      scrollPos > 2.5
+        ? !isDarkmodeActive
+          ? 75
+          : 250
+        : scrollPos > 2
+        ? !isDarkmodeActive
+          ? 50
+          : 150
+        : 15;
     setDelta(delta);
     ref.current.rotation.x -= delta / pos1;
     ref.current.rotation.y -= delta / pos2;
@@ -34,8 +52,22 @@ const StarBackground = (props: any) => {
       <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
         <PointMaterial
           transparent
-          color={isDarkmodeActive ? "#fff" : "#000"}
-          size={scrollPos > 2.5 ? 0.0011 : scrollPos > 2 ? 0.0022 : 0.0055}
+          color={
+            isDarkmodeActive ? "#fff" : scrollPos > 2.5 ? "#424242" : "#000"
+          }
+          size={
+            scrollPos > 2.5
+              ? !isDarkmodeActive
+                ? 0.005
+                : 0.0011
+              : scrollPos > 2
+              ? !isDarkmodeActive
+                ? 0.008
+                : 0.0022
+              : !isDarkmodeActive
+              ? 0.01
+              : 0.0055
+          }
           sizeAttenuation={true}
           dethWrite={false}
         />

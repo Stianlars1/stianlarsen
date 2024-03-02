@@ -4,9 +4,9 @@
   justify-content: space-between;
   align-items: center;
   background-color: transparent;
+  overflow: visible;
   padding: 0 1.2rem;
   z-index: 100000000;
-  overflow: auto;
 }
 .navbar-header .navbar {
   width: 100%;
@@ -17,7 +17,6 @@
   margin: 0 auto;
   max-width: 1024px;
   padding: 0 1.2rem;
-  overflow: auto;
 }
 .navbar-header .navbar .topleftLogo a {
   position: relative;

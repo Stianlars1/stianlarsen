@@ -1,7 +1,6 @@
 "use client";
 
 import { handleScrollIntoView } from "@/lib/utils";
-import { motion } from "framer-motion";
 import { ChevronDownCircle } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -22,10 +21,10 @@ export const ScrollDownIcon = () => {
   }, []);
 
   return (
-    <motion.div className="scroll-down-icon" style={{ opacity: opacity }}>
+    <div className="scroll-down-icon" style={{ opacity: opacity }}>
       <Link href="#about-me" onClick={handleScrollIntoView}>
         <ChevronDownCircle />
       </Link>
-    </motion.div>
+    </div>
   );
 };

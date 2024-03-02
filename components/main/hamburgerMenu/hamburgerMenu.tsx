@@ -10,7 +10,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
+import { cn, handleScrollIntoView } from "@/lib/utils";
 import { Menu } from "lucide-react";
 
 export function HamburgerMenu() {
@@ -23,9 +23,17 @@ export function HamburgerMenu() {
           </NavigationMenuTrigger>
           <NavigationMenuContent className="w-[150px]" style={{ right: "0" }}>
             <ul className="grid gap-3 p-3  md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] right-0">
-              <ListItem href="/about-me" title="About me" />
-              <ListItem href="/projects" title="Projects" />
-              <ListItem href="/cv" title="CV" />
+              <ListItem
+                href="#about-me"
+                title="About me"
+                onClick={handleScrollIntoView}
+              />
+              <ListItem
+                href="#projects"
+                title="Projects"
+                onClick={handleScrollIntoView}
+              />
+              <ListItem href="#cv" title="CV" onClick={handleScrollIntoView} />
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>

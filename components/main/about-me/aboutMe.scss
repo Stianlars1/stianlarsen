@@ -1,16 +1,12 @@
 .about-me {
-  margin-top: 84px;
+  margin: 0 auto;
+  padding-top: 84px;
+  min-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 1024px;
   z-index: -100;
-  scroll-snap-align: center;
-  scroll-behavior: smooth;
-  scroll-snap-type: mandatory;
 
   &__h2 {
     font-size: 2.5rem;
@@ -23,6 +19,7 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
+
     &__image {
       border-radius: 50%;
       border: 2px solid hsl(var(--primary));
@@ -37,8 +34,7 @@
 
       > p {
         flex-shrink: 1;
-        color: hsl(var(--primary-foreground));
-        color: #333; // Change to your preferred text color
+        color: hsl(var(--secondary-foreground));
         font-size: 1.1rem; // Adjust font size as needed
         line-height: 1.6; // Improves readability
         margin: 0 0 20px; // Adjust spacing as needed

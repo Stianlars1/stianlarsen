@@ -21,6 +21,8 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "colorthief": "^2.4.0",
+    "embla-carousel-autoplay": "^8.0.0-rc21",
+    "embla-carousel-react": "^8.0.0-rc21",
     "framer-motion": "^11.0.2",
     "lucide-react": "^0.312.0",
     "next": "14.1.0",

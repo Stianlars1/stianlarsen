@@ -12,6 +12,11 @@ body {
   overflow-y: visible;
 }
 
+body main {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

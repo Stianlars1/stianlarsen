@@ -1,0 +1,2 @@
+declare;
+("embla-carousel-autoplay");
