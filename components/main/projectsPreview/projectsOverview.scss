@@ -1,7 +1,13 @@
 .projects {
-  margin-top: 84px;
+  margin-top: 128px;
   width: 100%;
   max-width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
   .carousel_wrapper {
     width: 80% !important;
     margin: 0 auto;

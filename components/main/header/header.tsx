@@ -1,4 +1,3 @@
-"use client";
 import { HeaderH1Title } from "./components/h1";
 import { ScrollDownIcon } from "./components/scrollDownIcon/scrollDownIcon";
 

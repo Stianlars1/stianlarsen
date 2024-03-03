@@ -1,0 +1,17 @@
+.contact {
+  width: 100%;
+  max-width: 600px;
+  margin: 128px auto 84px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+.contact .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact .header .textBackgroundImage {
+  max-width: 500px;
+}/*# sourceMappingURL=contact.css.map */

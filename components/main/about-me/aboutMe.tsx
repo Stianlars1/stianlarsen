@@ -20,7 +20,7 @@ export const AboutMe = () => {
         </Reveal>
         <Reveal type={"up"} delay={0.7}>
           <article className="about-me__content__article">
-            <p>
+            <p className="textBackgroundImage">
               I&apos;m Stian, a {myAge}-year-old full-stack web developer with a
               passion for turning ideas into digital realities. With a Computer
               Engineering background, I thrive on exploring new front-end

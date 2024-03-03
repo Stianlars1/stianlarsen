@@ -1,0 +1,34 @@
+section {
+  position: relative;
+  max-width: 600px;
+}
+section .spinner {
+  width: 12rem;
+  height: 12rem;
+  position: relative;
+}
+section .spinner .logo {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+}
+section .spinner .one {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+section .spinner .twoo {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+section .spinner .three {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+section .spinner .four {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}/*# sourceMappingURL=index.css.map */

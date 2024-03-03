@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/carousel";
 import { useRouter } from "next/navigation";
 import React from "react";
+import { Heading2 } from "../typography/headings";
 import "./projectsOverview.css";
 import { darkenColor } from "./util";
 
@@ -34,7 +35,11 @@ export const ProjectsPreview = ({
   return (
     <section id="projects" className="projects">
       <Reveal type="right" delay={0.55}>
-        <h3>Projects</h3>
+        <>
+          <Heading2 className="projects-title textBackgroundImage">
+            Projects Gallery
+          </Heading2>
+        </>
       </Reveal>
       <Reveal
         type="right"

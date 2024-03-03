@@ -1,0 +1,17 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 450px;
+}
+.form-container form {
+  width: 100%;
+}
+.form-container .margin-top {
+  margin-top: 0.5rem;
+}
+.form-container .cta-button {
+  margin-top: 24px;
+  align-self: center;
+}/*# sourceMappingURL=formContainer.css.map */

@@ -11,9 +11,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
       enableSystem
       disableTransitionOnChange
     >
-      <ParallaxProvider>
-        {children}
-        </ParallaxProvider>
+      <ParallaxProvider>{children}</ParallaxProvider>
     </ThemeProvider>
   );
 }

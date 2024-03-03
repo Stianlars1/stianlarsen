@@ -1,9 +1,9 @@
 import { motion, useAnimation, useInView } from "framer-motion";
-import { ReactElement, useEffect, useRef } from "react";
+import { ReactElement, ReactNode, useEffect, useRef } from "react";
 type MotionProps = "down" | "up" | "left" | "right";
 
 interface RevealProps {
-  children: ReactElement;
+  children: ReactElement | ReactElement[] | ReactNode | ReactNode[];
   type: MotionProps;
   delay: number;
   width?: "fit-content" | "100%";
@@ -71,13 +71,16 @@ export const Reveal = ({
       <div
         ref={ref}
         style={{ position: "relative", width }}
-        className={className && className.length > 0 ? className : ""}
+        className={`reveal ${
+          className && className.length > 0 ? className : ""
+        }`}
       >
         <motion.div
           {...motionProps}
           initial="hidden"
           animate={mainControls}
           transition={{ duration: 0.5, delay: delay }}
+          className="reveal-motion-wrapper reveal__motion-wrapper"
         >
           {children}
         </motion.div>

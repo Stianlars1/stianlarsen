@@ -47,10 +47,13 @@ const StarBackground = (props: any) => {
     ref.current.rotation.y -= delta / pos2;
   });
 
+  const pointOpacity = scrollPos > 3 ? 0.45 : 1;
+
   return (
     <group rotation={[0, 0, Math.PI / 4]}>
       <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
         <PointMaterial
+          opacity={pointOpacity}
           transparent
           color={
             isDarkmodeActive ? "#fff" : scrollPos > 2.5 ? "#424242" : "#000"
@@ -88,7 +91,7 @@ const StarsCanvas = () => {
 
     // Start at 10 and move towards 1 as the user scrolls down
     const newZ = Math.max(1, 1 + scrollY / scrollFactor);
-    if (cameraRef.current) {
+    if (cameraRef.current && newZ <= 3) {
       setScrollPosition(newZ);
       cameraRef.current.position.z = newZ;
     }
@@ -96,7 +99,7 @@ const StarsCanvas = () => {
 
   setTimeout(() => {
     setShowCanvas(true);
-  }, 800);
+  }, 500);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);

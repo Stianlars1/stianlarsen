@@ -1,0 +1,9 @@
+.skills {
+  width: 100%;
+  max-width: 600px;
+  margin: 128px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}/*# sourceMappingURL=skills.css.map */

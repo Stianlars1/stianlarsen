@@ -3,7 +3,9 @@ import { roboto_mono } from "./fonts";
 
 import { Footer } from "@/components/main/footer/footer";
 import { Navbar } from "@/components/main/navbar/navbar";
+import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
+import "./layout.css";
 import { Providers } from "./providers";
 
 export const metadata: Metadata = {
@@ -55,6 +57,7 @@ export default function RootLayout({
           <main className="px-[20px]">{children}</main>
           <Footer />
         </Providers>
+        <Toaster />
       </body>
     </html>
   );

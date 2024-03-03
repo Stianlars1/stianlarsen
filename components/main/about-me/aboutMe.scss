@@ -40,6 +40,8 @@
         margin: 0 0 20px; // Adjust spacing as needed
         font-weight: 400; // Adjust font weight as preferred
         text-wrap: wrap;
+        position: relative;
+        z-index: 2;
 
         @media (max-width: 768px) {
           font-size: 1rem; // Smaller font size on smaller screens

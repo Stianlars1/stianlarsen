@@ -17,6 +17,15 @@ body main {
   margin: 0 auto;
 }
 
+/* Animations */
+.animate-fadeInUp-1000 {
+  animation: fadeInUp 1000ms ease-out 0s 1 normal backwards;
+}
+
+.animate-fadeInUp-1200-400 {
+  animation: fadeInUp 1200ms ease-out 400ms 1 normal backwards;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -70,5 +79,16 @@ body main {
   }
   body {
     background-color: hsl(var(--background));
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
   }
 }

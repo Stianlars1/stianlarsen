@@ -1,0 +1,39 @@
+section {
+  position: relative;
+  max-width: 600px;
+  .spinner {
+    width: 12rem;
+    height: 12rem;
+    position: relative;
+
+    .logo {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+    }
+
+    .one {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .twoo {
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .three {
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+
+    .four {
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+  }
+}
