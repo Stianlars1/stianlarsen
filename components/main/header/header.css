@@ -1,5 +1,5 @@
 .main-header {
-  width: 100%;
+  min-width: 100%;
   height: calc(100vh - 100px);
   display: flex;
   flex-direction: column;
