@@ -11,7 +11,7 @@ export const LogoSpinner = () => {
   });
   return (
     <>
-      <section>
+      <article className="logo-section">
         <div ref={parallax.ref} className="spinner">
           <ReactLogo className="logo one" />
           <TypescriptLogo className="logo twoo" />
@@ -19,7 +19,7 @@ export const LogoSpinner = () => {
           <JavascriptLogo className="logo three" />
           <FirebaseLogo className="logo four" />
         </div>
-      </section>
+      </article>
     </>
   );
 };
