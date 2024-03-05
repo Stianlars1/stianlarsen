@@ -27,10 +27,8 @@ export async function sendEmail({
 
   try {
     await sgMail.send(msg);
-    console.log("Email sent successfully!");
     return { isSuccess: true };
   } catch (error) {
-    console.error("Error sending email:", error);
     return { isSuccess: false };
   }
 }

@@ -4,7 +4,6 @@ import { getProject } from "./api";
 
 export default async function Page({ params }: { params: { id: string } }) {
   const project = await getProject(params.id);
-  console.log(project);
   return (
     <div>
       <h1>{project.title}</h1>

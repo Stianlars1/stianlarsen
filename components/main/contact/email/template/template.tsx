@@ -73,7 +73,7 @@ export const EmailFromContactFormTemplate = ({
           </Row>
         </Section>
       </Body>
-    </Html>
+    </Html>,
   );
 };
 

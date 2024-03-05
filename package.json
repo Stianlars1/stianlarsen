@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "prettier --write \"app/**/*.{js,jsx,ts,tsx,css,less,scss,md}\" \"components/main/**/*.{js,jsx,ts,tsx,css, scss,less,md}\""
   },
   "type": "commonjs",
   "dependencies": {
@@ -36,6 +37,7 @@
     "next": "14.1.0",
     "next-sanity": "^7.1.4",
     "next-themes": "^0.2.1",
+    "prettier": "^3.2.5",
     "react": "^18",
     "react-dom": "^18",
     "react-email": "2.1.0",

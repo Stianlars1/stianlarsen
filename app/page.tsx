@@ -4,7 +4,7 @@ import StarsCanvas from "@/components/main/header/components/starBackground";
 import { Header } from "@/components/main/header/header";
 import { getpreviewProjects } from "@/components/main/projectsPreview/api";
 import { ProjectsPreview } from "@/components/main/projectsPreview/projectsPreview";
-import { Skills } from "@/components/main/skills/skills";
+import { SkillsContainer } from "@/components/main/skillsContainer/skillsContainer";
 
 export default async function Home() {
   const projects: PreviewProjectsType[] = await getpreviewProjects();
@@ -13,7 +13,7 @@ export default async function Home() {
       <Header />
       <AboutMe />
       <ProjectsPreview projects={projects} />
-      <Skills />
+      <SkillsContainer />
       <ContactMe />
       <StarsCanvas />
     </>

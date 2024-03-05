@@ -1,0 +1,30 @@
+.effect-container {
+  position: relative;
+  min-width: 100%;
+}
+.effect-container .box {
+  width: 5rem;
+  height: 5rem;
+  margin: 0 auto;
+}
+.effect-container .box #icons {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.effect-container .box #icons .logo {
+  width: 50px;
+  border-radius: 0.25rem;
+  padding: 5px;
+  background-color: white;
+}
+.effect-container .box #icons .dark-bg {
+  background-color: black;
+}
+.effect-container .box #icons .light-bg {
+  background-color: white;
+} /*# sourceMappingURL=SkillsEffectContainer.css.map */

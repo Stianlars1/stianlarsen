@@ -16,7 +16,7 @@ const StarBackground = (props: any) => {
   const { isDarkmodeActive } = useIsDarkmodeActive();
   const [delta, setDelta] = useState(0);
   const [sphere] = useState(() =>
-    random.inSphere(new Float32Array(5000), { radius: 1.2 })
+    random.inSphere(new Float32Array(5000), { radius: 1.2 }),
   );
 
   const scrollPos = props && props.scrollPosition;
@@ -28,20 +28,20 @@ const StarBackground = (props: any) => {
           ? 75
           : 200
         : scrollPos > 2
-        ? !isDarkmodeActive
-          ? 50
-          : 100
-        : 10;
+          ? !isDarkmodeActive
+            ? 50
+            : 100
+          : 10;
     const pos2 =
       scrollPos > 2.5
         ? !isDarkmodeActive
           ? 75
           : 250
         : scrollPos > 2
-        ? !isDarkmodeActive
-          ? 50
-          : 150
-        : 15;
+          ? !isDarkmodeActive
+            ? 50
+            : 150
+          : 15;
     setDelta(delta);
     ref.current.rotation.x -= delta / pos1;
     ref.current.rotation.y -= delta / pos2;
@@ -64,12 +64,12 @@ const StarBackground = (props: any) => {
                 ? 0.005
                 : 0.0011
               : scrollPos > 2
-              ? !isDarkmodeActive
-                ? 0.008
-                : 0.0022
-              : !isDarkmodeActive
-              ? 0.01
-              : 0.0055
+                ? !isDarkmodeActive
+                  ? 0.008
+                  : 0.0022
+                : !isDarkmodeActive
+                  ? 0.01
+                  : 0.0055
           }
           sizeAttenuation={true}
           dethWrite={false}

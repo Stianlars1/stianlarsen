@@ -14,8 +14,8 @@ export function darkenColor(hexColor: string, percent: number): string {
     ? l === r
       ? (g - b) / s
       : l === g
-      ? 2 + (b - r) / s
-      : 4 + (r - g) / s
+        ? 2 + (b - r) / s
+        : 4 + (r - g) / s
     : 0;
 
   // Calculate lightness

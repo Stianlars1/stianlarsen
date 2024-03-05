@@ -3,12 +3,10 @@
 import { useEffect, useState } from "react";
 
 const useLoadingSimulation = (startLoading = true, totalDuration = 10000) => {
-  console.log("useLoadingSimulation");
   const [isAnimationLoading, setIsAnimationLoading] = useState(startLoading);
   const [timer, setTimer] = useState(0);
 
   useEffect(() => {
-    console.log("useEffect");
     if (!isAnimationLoading) {
       return;
     }

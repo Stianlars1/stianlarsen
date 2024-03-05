@@ -45,7 +45,6 @@ export const FormContainer = () => {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log("clicked!", values);
     setIsLoading(true);
 
     try {
@@ -66,7 +65,6 @@ export const FormContainer = () => {
       });
 
       if (isSuccess) {
-        console.log("Email sent successfully!");
         toast({
           title: "Email sent successfully 🎉",
           description: "I will get back to you as soon as possible.",
@@ -75,7 +73,6 @@ export const FormContainer = () => {
         setMessage("");
       }
     } catch (err) {
-      console.log(err, " \nNot successfull");
     } finally {
       setIsLoading(false);
     }
