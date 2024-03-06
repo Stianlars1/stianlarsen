@@ -1,36 +1,26 @@
 "use client";
 import { useWindowSize } from "@/lib/hooks/windowSize";
-import { ReactElement } from "react";
 
-export const HeaderH1Title = ({ className }: { className: string }) => {
+export const HeaderH1Title = ({ className }: { className?: string }) => {
   const { windowWidth } = useWindowSize();
-  const getH1Title = (): ReactElement => {
-    if (windowWidth < 500) {
-      return (
-        <span className="mobileH1">
-          <span style={{ whiteSpace: "nowrap" }}>Hello,</span>
-          <span style={{ whiteSpace: "nowrap" }}>I&apos;m Stian,</span>
-          <span style={{ whiteSpace: "nowrap" }}>Full-Stack </span>
-          <span style={{ whiteSpace: "nowrap" }}>Developer</span>
-        </span>
-      );
-    }
-
+  if (typeof window !== "undefined" && windowWidth && windowWidth < 500) {
     return (
-      <>
-        <span>Hello,</span> <span>I&apos;m Stian,</span>
-        <br />
-        <span>Full-Stack Web</span>
-        <br />
-        <span>Developer</span>
-      </>
+      <span className="mobileH1">
+        <span style={{ whiteSpace: "nowrap" }}>Hello,</span>
+        <span style={{ whiteSpace: "nowrap" }}>I&apos;m Stian,</span>
+        <span style={{ whiteSpace: "nowrap" }}>a Full-Stack </span>
+        <span style={{ whiteSpace: "nowrap" }}>Developer</span>
+      </span>
     );
-  };
-  const h1Title = getH1Title();
+  }
 
   return (
     <>
-      <h1 className={`${className} animate-fadeInUp-1000`}>{h1Title}</h1>
+      <span>Hello,</span> <span>I&apos;m Stian,</span>
+      <br />
+      <span>Full-Stack Web</span>
+      <br />
+      <span>Developer</span>
     </>
   );
 };
