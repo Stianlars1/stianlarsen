@@ -1,0 +1,70 @@
+.project-page__header {
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .project-page__header {
+    text-align: left;
+  }
+}
+.project-page__header .header-image {
+  margin-top: 1rem;
+  min-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.project-page__header__quote {
+  text-align: center;
+}
+.project-page__header__title {
+  font-weight: 600;
+  font-size: 2.5rem;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: center;
+  gap: 1rem;
+}
+.project-page__header__title .logo-image {
+  width: 50px;
+  height: 50px;
+}
+@media screen and (max-width: 768px) {
+  .project-page__header__title {
+    font-size: 20px;
+    text-align: left;
+  }
+  .project-page__header__title .logo-image {
+    width: 40px;
+    height: 40px;
+  }
+}
+.project-page__header__subtitle {
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-top: 24px;
+  text-align: left;
+}
+.project-page .article-wrapper p {
+  margin-bottom: 0;
+}
+.project-page .images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 40px;
+}
+.project-page h2,
+.project-page h3,
+.project-page h4,
+.project-page h5,
+.project-page h6 {
+  font-weight: 800;
+  margin-top: 24px;
+}
+.project-page .images-gallery .images {
+  display: flex;
+  gap: 3rem;
+}/*# sourceMappingURL=projectPage.css.map */

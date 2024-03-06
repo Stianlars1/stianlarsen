@@ -1,9 +1,13 @@
 "use client";
+import { useBrowserInfo } from "@/lib/hooks/isNative";
 import { useWindowSize } from "@/lib/hooks/windowSize";
 
 export const HeaderH1Title = ({ className }: { className?: string }) => {
   const { windowWidth } = useWindowSize();
-  if (typeof window !== "undefined" && windowWidth && windowWidth < 500) {
+  const { isMobile } = useBrowserInfo();
+  console.log("windowWidth: ", windowWidth);
+
+  if (isMobile || (windowWidth && windowWidth < 500)) {
     return (
       <span className="mobileH1">
         <span style={{ whiteSpace: "nowrap" }}>Hello,</span>

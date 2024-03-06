@@ -8,7 +8,11 @@ export const getProject = async (id: string): Promise<ProjectType> => {
     titleImage,
     previewLogo,
     previewLogoBackgroundColor,
-    mockupImage
+    mockupImage,
+    imageDescription,
+bigDescription,
+images,
+content
   }`;
 
   const data = await sanityClient.fetch(sanityQuery);

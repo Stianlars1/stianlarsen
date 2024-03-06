@@ -12,6 +12,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { Heading2 } from "../typography/headings";
@@ -20,11 +21,13 @@ import { darkenColor } from "./util";
 
 export const ProjectsPreview = ({
   projects,
+  title,
 }: {
   projects: PreviewProjectsType[];
+  title?: string;
 }) => {
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true }),
+    Autoplay({ delay: 2000, stopOnInteraction: true })
   );
   const router = useRouter();
 
@@ -37,7 +40,7 @@ export const ProjectsPreview = ({
       <Reveal type="right" delay={0.55}>
         <>
           <Heading2 className="projects-title textBackgroundImage">
-            Projects Gallery
+            {title && title.length > 0 ? title : "Projects Gallery"}
           </Heading2>
         </>
       </Reveal>
@@ -57,11 +60,11 @@ export const ProjectsPreview = ({
             {projects.map((project, index) => {
               const foregroundColor = darkenColor(
                 project.previewLogoBackgroundColor,
-                -50,
+                -50
               );
               const darkenedBackgroundColor = darkenColor(
                 project.previewLogoBackgroundColor,
-                30,
+                30
               );
               return (
                 <CarouselItem key={index} className="pl-1  ">
@@ -80,12 +83,12 @@ export const ProjectsPreview = ({
 
                         <p>{project.smallDescription}</p>
 
-                        <Button
-                          variant={"secondary"}
-                          onClick={() => handleNavigate(project.currentSlug)}
+                        <Link
+                          href={`/projects/${project.currentSlug}`}
+                          prefetch={true}
                         >
-                          Read more
-                        </Button>
+                          <Button variant={"secondary"}>Read more</Button>
+                        </Link>
                       </CardContent>
                     </Card>
                   </div>

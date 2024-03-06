@@ -2,21 +2,21 @@
 import { useEffect, useState } from "react";
 
 export const useWindowSize = () => {
-  // Initialize state with width and height to avoid returning 0 on initial render
-  const [windowSize, setWindowSize] = useState({
-    windowWidth: window.innerWidth,
-    windowHeight: window.innerHeight,
+  const [windowSize, setWindowSize] = useState<{
+    windowWidth: number | undefined;
+    windowHeight: number | undefined;
+  }>({
+    windowWidth: undefined,
+    windowHeight: undefined,
   });
 
   useEffect(() => {
     const handleResize = () => {
       // Set window size with both width and height
-      if (typeof window !== "undefined") {
-        setWindowSize({
-          windowWidth: window.innerWidth,
-          windowHeight: window.innerHeight,
-        });
-      }
+      setWindowSize({
+        windowWidth: window.innerWidth,
+        windowHeight: window.innerHeight,
+      });
     };
 
     window.addEventListener("resize", handleResize);

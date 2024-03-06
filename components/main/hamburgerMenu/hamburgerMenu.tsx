@@ -10,7 +10,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { cn, handleScrollIntoView } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import { Menu } from "lucide-react";
 
 export function HamburgerMenu() {
@@ -23,17 +23,9 @@ export function HamburgerMenu() {
           </NavigationMenuTrigger>
           <NavigationMenuContent className="w-[150px]" style={{ right: "0" }}>
             <ul className="grid gap-3 p-3  md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] right-0">
-              <ListItem
-                href="#about-me"
-                title="About me"
-                onClick={handleScrollIntoView}
-              />
-              <ListItem
-                href="#projects"
-                title="Projects"
-                onClick={handleScrollIntoView}
-              />
-              <ListItem href="#cv" title="CV" onClick={handleScrollIntoView} />
+              <ListItem href="/#about-me" title="About me" />
+              <ListItem href="/#projects" title="Projects" />
+              <ListItem href="/#cv" title="CV" />
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
@@ -53,7 +45,7 @@ const ListItem = React.forwardRef<
           ref={ref}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className,
+            className
           )}
           {...props}
         >

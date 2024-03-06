@@ -15,4 +15,9 @@ interface ProjectType {
   previewLogo: any;
   previewLogoBackgroundColor: string;
   mockupImage?: any;
+
+  imageDescription: string;
+  bigDescription: string;
+  images: any | any[];
+  content: any;
 }

@@ -103,6 +103,10 @@
   }
 }
 @media screen and (max-width: 500px) {
+  .main-header__wrapper {
+    margin-top: 100px;
+    padding-top: 0;
+  }
   .main-header__wrapper__h1 {
     font-size: 3rem;
     line-height: 50px;

@@ -1,25 +1,64 @@
 "use client";
-import { handleScrollIntoView } from "@/lib/utils";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
-export const NavItems = () => (
-  <nav>
-    <ul className="hidden justify-between align-middle gap-4  md:flex">
-      <li>
-        <Link href={"#about-me"} onClick={handleScrollIntoView}>
-          About me
-        </Link>
-      </li>
-      <li>
-        <Link href={"#projects"} onClick={handleScrollIntoView}>
-          Projects
-        </Link>
-      </li>
-      <li>
-        <Link href={"#cv"} onClick={handleScrollIntoView}>
-          CV
-        </Link>
-      </li>
-    </ul>
-  </nav>
-);
+export const NavItems = () => {
+  const router = useRouter();
+
+  // const handleScrollIntoView = (
+  //   e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  // ) => {
+  //   e.preventDefault();
+  //   const href = e.currentTarget.href;
+  //   const targetId = href.replace(/.*\#/, "");
+
+  //   // Function to scroll to the target element
+  //   const scrollToElement = () => {
+  //     const elem = document.getElementById(targetId);
+  //     elem?.scrollIntoView({ behavior: "smooth" });
+  //   };
+
+  //   // Check if the user is not on the home page
+  //   if (window.location.pathname !== "/" && targetId) {
+  //     // Use Next.js Router to navigate back to the home page
+  //     router.prefetch("/#" + targetId);
+  //   } else {
+  //     // User is already on the home page, just scroll to the element
+  //     scrollToElement();
+  //   }
+  // };
+
+  return (
+    <nav>
+      <ul className="hidden justify-between align-middle gap-4  md:flex">
+        <li>
+          <Link
+            href={"/#about-me"}
+            prefetch={true}
+            // onClick={handleScrollIntoView}
+          >
+            About me
+          </Link>
+        </li>
+        <li>
+          <Link
+            href={"/#projects"}
+            prefetch={true}
+            // onClick={handleScrollIntoView}
+          >
+            Projects
+          </Link>
+        </li>
+        <li>
+          <Link
+            href={"/#cv"}
+            prefetch={true}
+            // onClick={handleScrollIntoView}
+          >
+            CV
+          </Link>
+        </li>
+      </ul>
+    </nav>
+  );
+};

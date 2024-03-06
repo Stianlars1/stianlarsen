@@ -2,7 +2,7 @@
 import { useBrowserInfo } from "@/lib/hooks/isNative";
 import { useIsDarkmodeActive } from "@/lib/useIsDarkmodeActive";
 import { useAnimate, useInView } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { AlgoliaLogo } from "../../icons/algolia";
 import { AwsLogo } from "../../icons/aws";
 import { CSharpLogo } from "../../icons/csharp";
@@ -31,6 +31,8 @@ const iconsAnimationInitial = { y: 10, opacity: 0, display: "none" };
 const iconsAnimation = { y: 0, opacity: 1, display: "initial" };
 
 export const SkillsEffectContainer = () => {
+  const isAnimating = useRef(true);
+
   const [scope, animate] = useAnimate();
   const { isMobile } = useBrowserInfo();
   const { isDarkmodeActive } = useIsDarkmodeActive();
@@ -41,6 +43,10 @@ export const SkillsEffectContainer = () => {
   });
 
   const startAnimation = async () => {
+    const elem = document.querySelector("#one");
+    if (!elem) return;
+    if (!isAnimating.current) return;
+
     await animate(
       "#one",
       {
@@ -51,18 +57,24 @@ export const SkillsEffectContainer = () => {
         rotate: 45,
         marginTop: "3.5rem",
       },
-      { duration: 0.5, delay: 0.8 },
+      { duration: 0.5, delay: 0.8 }
     );
+    if (!isAnimating.current) return;
+
     await animate(
       "#one",
       { backgroundColor: "blue", borderRadius: "40%", scale: 1.5, rotate: 90 },
-      { duration: 0.5 },
+      { duration: 0.5 }
     );
+    if (!isAnimating.current) return;
+
     await animate(
       "#one",
       { backgroundColor: "red", borderRadius: "20%", scale: 2, rotate: -180 },
-      { duration: 0.5 },
+      { duration: 0.5 }
     );
+    if (!isAnimating.current) return;
+
     await animate(
       "#one",
       {
@@ -71,8 +83,10 @@ export const SkillsEffectContainer = () => {
         scale: 1.5,
         rotate: 45,
       },
-      { duration: 0.5 },
+      { duration: 0.5 }
     );
+    if (!isAnimating.current) return;
+
     await animate(
       "#one",
       {
@@ -82,8 +96,10 @@ export const SkillsEffectContainer = () => {
         scale: 1,
         marginTop: "0",
       },
-      { duration: 0.5 },
+      { duration: 0.5 }
     );
+    if (!isAnimating.current) return;
+
     await animate(
       "#one",
       {
@@ -94,8 +110,9 @@ export const SkillsEffectContainer = () => {
         padding: "20px",
         minHeight: "140px",
       },
-      { duration: 0.5 },
+      { duration: 0.5 }
     );
+    if (!isAnimating.current) return;
 
     // last animation box to fit icons
     await animate(
@@ -109,40 +126,83 @@ export const SkillsEffectContainer = () => {
         height: "auto",
         padding: "20px",
       },
-      { duration: 0.5 },
+      { duration: 0.5 }
     );
+    if (!isAnimating.current) return;
 
     // Icons container
     await animate(
       "#icons",
       { scale: 1, opacity: 1, display: "flex" },
-      { duration: 0.5 },
+      { duration: 0.5 }
     );
+    if (!isAnimating.current) return;
 
     // icons
     await animate(".react", iconsAnimation, { duration: iconsDuration });
+    if (!isAnimating.current) return;
+
     await animate(".nextjs", iconsAnimation, { duration: iconsDuration });
+    if (!isAnimating.current) return;
+
     await animate(".typescript", iconsAnimation, { duration: iconsDuration });
+    if (!isAnimating.current) return;
+
     await animate(".javascript", iconsAnimation, { duration: iconsDuration });
+    if (!isAnimating.current) return;
+
     await animate(".html", iconsAnimation, { duration: iconsDuration });
+    if (!isAnimating.current) return;
+
     await animate(".less", iconsAnimation, { duration: iconsDuration });
+    if (!isAnimating.current) return;
+
     await animate(".scss", iconsAnimation, { duration: iconsDuration });
+    if (!isAnimating.current) return;
+
     await animate(".firebase", iconsAnimation, { duration: iconsDuration });
+    if (!isAnimating.current) return;
+
     await animate(".github", iconsAnimation, { duration: iconsDuration });
+    if (!isAnimating.current) return;
+
     await animate(".aws", iconsAnimation, { duration: iconsDuration });
+    if (!isAnimating.current) return;
+
     await animate(".mysql", iconsAnimation, { duration: iconsDuration });
+    if (!isAnimating.current) return;
+
     await animate(".framerMotion", iconsAnimation, { duration: iconsDuration });
+    if (!isAnimating.current) return;
+
     await animate(".java", iconsAnimation, { duration: iconsDuration });
+    if (!isAnimating.current) return;
+
     await animate(".kotlin", iconsAnimation, { duration: iconsDuration });
+    if (!isAnimating.current) return;
+
     await animate(".algolia", iconsAnimation, { duration: iconsDuration });
+    if (!isAnimating.current) return;
+
     await animate(".sanity", iconsAnimation, { duration: iconsDuration });
+    if (!isAnimating.current) return;
+
     await animate(".dotnet", iconsAnimation, { duration: iconsDuration });
+    if (!isAnimating.current) return;
+
     await animate(".python", iconsAnimation, { duration: iconsDuration });
+    if (!isAnimating.current) return;
+
     await animate(".csharp", iconsAnimation, { duration: iconsDuration });
+    if (!isAnimating.current) return;
+
     await animate(".figma", iconsAnimation, { duration: iconsDuration });
   };
 
   useEffect(() => {
+    isAnimating.current = true;
+    startAnimation();
+
     // INITIAL ANIMATION
     // animate effect
     animate("#one", { scale: 0, opacity: 0 }, { duration: 0.5, delay: 0.8 });
@@ -172,9 +232,16 @@ export const SkillsEffectContainer = () => {
     animate(".csharp", iconsAnimationInitial);
     animate(".figma", iconsAnimationInitial);
 
-    if (isInView) {
-      startAnimation();
-    }
+    const timer = setTimeout(() => {
+      if (isInView) {
+        startAnimation();
+      }
+    }, 100);
+
+    return () => {
+      isAnimating.current = false; // Prevents further animations
+      clearTimeout(timer);
+    };
   }, [isInView]);
 
   return (
