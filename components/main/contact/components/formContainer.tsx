@@ -153,7 +153,7 @@ export const FormContainer = () => {
         </Button>
       )}
 
-      {isLoading && <ButtonLoading />}
+      {isLoading && <ButtonLoading className="cta-button" />}
     </div>
   );
 };

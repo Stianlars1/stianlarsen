@@ -1,8 +1,13 @@
 "use client";
+import { useBrowserInfo } from "@/lib/hooks/isNative";
+import { useIsDarkmodeActive } from "@/lib/useIsDarkmodeActive";
 import { useAnimate, useInView } from "framer-motion";
 import { useEffect } from "react";
 import { AlgoliaLogo } from "../../icons/algolia";
 import { AwsLogo } from "../../icons/aws";
+import { CSharpLogo } from "../../icons/csharp";
+import { DotNetLogo } from "../../icons/dotNet";
+import { Figmalogo } from "../../icons/figma";
 import { FirebaseLogo } from "../../icons/firebase";
 import { FramerMotionLogo } from "../../icons/framerMotion";
 import { GithubLogo } from "../../icons/github";
@@ -12,13 +17,23 @@ import { JavascriptLogo } from "../../icons/javascript";
 import { KotlinLogo } from "../../icons/kotlin";
 import { LessLogo } from "../../icons/less";
 import { MySqlLogo } from "../../icons/mysql";
+import { NextJsLogo } from "../../icons/nextjs";
+import { PythonLogo } from "../../icons/python";
 import { ReactLogo } from "../../icons/react";
 import { SanityLogo } from "../../icons/sanity";
 import { ScssLogo } from "../../icons/scss";
 import { TypescriptLogo } from "../../icons/typescript";
 import "./SkillsEffectContainer.css";
+
+const iconsDuration = 0.25;
+const iconsAnimationInitial = { y: 10, opacity: 0, display: "none" };
+
+const iconsAnimation = { y: 0, opacity: 1, display: "initial" };
+
 export const SkillsEffectContainer = () => {
   const [scope, animate] = useAnimate();
+  const { isMobile } = useBrowserInfo();
+  const { isDarkmodeActive } = useIsDarkmodeActive();
   const isInView = useInView(scope, {
     once: true,
     amount: 0.5,
@@ -29,11 +44,12 @@ export const SkillsEffectContainer = () => {
     await animate(
       "#one",
       {
-        backgroundColor: "white",
+        backgroundColor: !isDarkmodeActive ? "#d3d3d3" : "white",
         borderRadius: "20%",
         scale: 2,
         opacity: 1,
         rotate: 45,
+        marginTop: "3.5rem",
       },
       { duration: 0.5, delay: 0.8 },
     );
@@ -63,6 +79,8 @@ export const SkillsEffectContainer = () => {
         backgroundColor: "hsl(var(--muted-foreground))",
         borderRadius: "16px",
         rotate: 0,
+        scale: 1,
+        marginTop: "0",
       },
       { duration: 0.5 },
     );
@@ -74,17 +92,21 @@ export const SkillsEffectContainer = () => {
         rotate: 0,
         minWidth: "100%",
         padding: "20px",
+        minHeight: "140px",
       },
       { duration: 0.5 },
     );
+
+    // last animation box to fit icons
     await animate(
       "#one",
       {
         backgroundColor: "hsl(var(--muted-foreground))",
         borderRadius: "16px",
         rotate: 0,
+
         minWidth: "100%",
-        minHeight: "160px",
+        height: "auto",
         padding: "20px",
       },
       { duration: 0.5 },
@@ -98,81 +120,26 @@ export const SkillsEffectContainer = () => {
     );
 
     // icons
-    await animate(
-      ".react",
-      { scale: 1, opacity: 1, display: "initial" },
-      { duration: 0.5 },
-    );
-    await animate(
-      ".typescript",
-      { scale: 1, opacity: 1, display: "initial" },
-      { duration: 0.5 },
-    );
-    await animate(
-      ".javascript",
-      { scale: 1, opacity: 1, display: "initial" },
-      { duration: 0.5 },
-    );
-    await animate(
-      ".html",
-      { scale: 1, opacity: 1, display: "initial" },
-      { duration: 0.5 },
-    );
-    await animate(
-      ".less",
-      { scale: 1, opacity: 1, display: "initial" },
-      { duration: 0.5 },
-    );
-    await animate(
-      ".scss",
-      { scale: 1, opacity: 1, display: "initial" },
-      { duration: 0.5 },
-    );
-    await animate(
-      ".firebase",
-      { scale: 1, opacity: 1, display: "initial" },
-      { duration: 0.5 },
-    );
-    await animate(
-      ".github",
-      { scale: 1, opacity: 1, display: "initial" },
-      { duration: 0.5 },
-    );
-    await animate(
-      ".aws",
-      { scale: 1, opacity: 1, display: "initial" },
-      { duration: 0.5 },
-    );
-    await animate(
-      ".mysql",
-      { scale: 1, opacity: 1, display: "initial" },
-      { duration: 0.5 },
-    );
-    await animate(
-      ".framerMotion",
-      { scale: 1, opacity: 1, display: "initial" },
-      { duration: 0.5 },
-    );
-    await animate(
-      ".java",
-      { scale: 1, opacity: 1, display: "initial" },
-      { duration: 0.5 },
-    );
-    await animate(
-      ".kotlin",
-      { scale: 1, opacity: 1, display: "initial" },
-      { duration: 0.5 },
-    );
-    await animate(
-      ".algolia",
-      { scale: 1, opacity: 1, display: "initial" },
-      { duration: 0.5 },
-    );
-    await animate(
-      ".sanity",
-      { scale: 1, opacity: 1, display: "initial" },
-      { duration: 0.5 },
-    );
+    await animate(".react", iconsAnimation, { duration: iconsDuration });
+    await animate(".nextjs", iconsAnimation, { duration: iconsDuration });
+    await animate(".typescript", iconsAnimation, { duration: iconsDuration });
+    await animate(".javascript", iconsAnimation, { duration: iconsDuration });
+    await animate(".html", iconsAnimation, { duration: iconsDuration });
+    await animate(".less", iconsAnimation, { duration: iconsDuration });
+    await animate(".scss", iconsAnimation, { duration: iconsDuration });
+    await animate(".firebase", iconsAnimation, { duration: iconsDuration });
+    await animate(".github", iconsAnimation, { duration: iconsDuration });
+    await animate(".aws", iconsAnimation, { duration: iconsDuration });
+    await animate(".mysql", iconsAnimation, { duration: iconsDuration });
+    await animate(".framerMotion", iconsAnimation, { duration: iconsDuration });
+    await animate(".java", iconsAnimation, { duration: iconsDuration });
+    await animate(".kotlin", iconsAnimation, { duration: iconsDuration });
+    await animate(".algolia", iconsAnimation, { duration: iconsDuration });
+    await animate(".sanity", iconsAnimation, { duration: iconsDuration });
+    await animate(".dotnet", iconsAnimation, { duration: iconsDuration });
+    await animate(".python", iconsAnimation, { duration: iconsDuration });
+    await animate(".csharp", iconsAnimation, { duration: iconsDuration });
+    await animate(".figma", iconsAnimation, { duration: iconsDuration });
   };
 
   useEffect(() => {
@@ -184,21 +151,26 @@ export const SkillsEffectContainer = () => {
     animate("#icons", { scale: 0, opacity: 0, display: "none" });
 
     // icons
-    animate(".react", { scale: 0, opacity: 0, display: "none" });
-    animate(".typescript", { scale: 0, opacity: 0, display: "none" });
-    animate(".javascript", { scale: 0, opacity: 0, display: "none" });
-    animate(".html", { scale: 0, opacity: 0, display: "none" });
-    animate(".less", { scale: 0, opacity: 0, display: "none" });
-    animate(".scss", { scale: 0, opacity: 0, display: "none" });
-    animate(".firebase", { scale: 0, opacity: 0, display: "none" });
-    animate(".github", { scale: 0, opacity: 0, display: "none" });
-    animate(".aws", { scale: 0, opacity: 0, display: "none" });
-    animate(".mysql", { scale: 0, opacity: 0, display: "none" });
-    animate(".framerMotion", { scale: 0, opacity: 0, display: "none" });
-    animate(".java", { scale: 0, opacity: 0, display: "none" });
-    animate(".kotlin", { scale: 0, opacity: 0, display: "none" });
-    animate(".algolia", { scale: 0, opacity: 0, display: "none" });
-    animate(".sanity", { scale: 0, opacity: 0, display: "none" });
+    animate(".react", iconsAnimationInitial);
+    animate(".nextjs", iconsAnimationInitial);
+    animate(".typescript", iconsAnimationInitial);
+    animate(".javascript", iconsAnimationInitial);
+    animate(".html", iconsAnimationInitial);
+    animate(".less", iconsAnimationInitial);
+    animate(".scss", iconsAnimationInitial);
+    animate(".firebase", iconsAnimationInitial);
+    animate(".github", iconsAnimationInitial);
+    animate(".aws", iconsAnimationInitial);
+    animate(".mysql", iconsAnimationInitial);
+    animate(".framerMotion", iconsAnimationInitial);
+    animate(".java", iconsAnimationInitial);
+    animate(".kotlin", iconsAnimationInitial);
+    animate(".algolia", iconsAnimationInitial);
+    animate(".sanity", iconsAnimationInitial);
+    animate(".dotnet", iconsAnimationInitial);
+    animate(".python", iconsAnimationInitial);
+    animate(".csharp", iconsAnimationInitial);
+    animate(".figma", iconsAnimationInitial);
 
     if (isInView) {
       startAnimation();
@@ -208,8 +180,9 @@ export const SkillsEffectContainer = () => {
   return (
     <div ref={scope} className="effect-container">
       <div id="one" className="box">
-        <div id="icons">
+        <div id="icons" className={!isMobile ? "desktopLogo" : ""}>
           <ReactLogo className="react logo dark-bg " />
+          <NextJsLogo className="nextjs logo light-bg" />
           <TypescriptLogo className="typescript logo" />
           <JavascriptLogo className="javascript logo" />
           <HtmlLogo className="html logo" />
@@ -224,6 +197,10 @@ export const SkillsEffectContainer = () => {
           <KotlinLogo className="kotlin logo light-bg" />
           <AlgoliaLogo className="algolia logo light-bg" />
           <SanityLogo className="sanity logo light-bg" />
+          <DotNetLogo className="dotnet logo light-bg" />
+          <PythonLogo className="python logo light-bg" />
+          <CSharpLogo className="csharp logo light-bg" />
+          <Figmalogo className="figma logo light-bg" />
         </div>
       </div>
     </div>

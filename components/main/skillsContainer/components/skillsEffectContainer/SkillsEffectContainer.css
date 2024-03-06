@@ -27,4 +27,7 @@
 }
 .effect-container .box #icons .light-bg {
   background-color: white;
+}
+.effect-container .box .desktopLogo .logo {
+  width: 75px !important;
 } /*# sourceMappingURL=SkillsEffectContainer.css.map */

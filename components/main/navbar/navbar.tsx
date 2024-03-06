@@ -30,7 +30,7 @@ export const Navbar = () => {
 
 const TopleftLogo = () => {
   return (
-    <Link href={"/"}>
+    <Link href={"/"} style={{ whiteSpace: "nowrap" }}>
       <code>{"{ Stian"}</code> <code className="text-primary">{`Larsen`}</code>{" "}
       <code>{"}"}</code>
     </Link>
