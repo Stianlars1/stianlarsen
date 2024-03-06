@@ -57,21 +57,21 @@ export const SkillsEffectContainer = () => {
         rotate: 45,
         marginTop: "3.5rem",
       },
-      { duration: 0.5, delay: 0.8 }
+      { duration: 0.5, delay: 0.8 },
     );
     if (!isAnimating.current) return;
 
     await animate(
       "#one",
       { backgroundColor: "blue", borderRadius: "40%", scale: 1.5, rotate: 90 },
-      { duration: 0.5 }
+      { duration: 0.5 },
     );
     if (!isAnimating.current) return;
 
     await animate(
       "#one",
       { backgroundColor: "red", borderRadius: "20%", scale: 2, rotate: -180 },
-      { duration: 0.5 }
+      { duration: 0.5 },
     );
     if (!isAnimating.current) return;
 
@@ -83,7 +83,7 @@ export const SkillsEffectContainer = () => {
         scale: 1.5,
         rotate: 45,
       },
-      { duration: 0.5 }
+      { duration: 0.5 },
     );
     if (!isAnimating.current) return;
 
@@ -96,7 +96,7 @@ export const SkillsEffectContainer = () => {
         scale: 1,
         marginTop: "0",
       },
-      { duration: 0.5 }
+      { duration: 0.5 },
     );
     if (!isAnimating.current) return;
 
@@ -110,7 +110,7 @@ export const SkillsEffectContainer = () => {
         padding: "20px",
         minHeight: "140px",
       },
-      { duration: 0.5 }
+      { duration: 0.5 },
     );
     if (!isAnimating.current) return;
 
@@ -126,7 +126,7 @@ export const SkillsEffectContainer = () => {
         height: "auto",
         padding: "20px",
       },
-      { duration: 0.5 }
+      { duration: 0.5 },
     );
     if (!isAnimating.current) return;
 
@@ -134,7 +134,7 @@ export const SkillsEffectContainer = () => {
     await animate(
       "#icons",
       { scale: 1, opacity: 1, display: "flex" },
-      { duration: 0.5 }
+      { duration: 0.5 },
     );
     if (!isAnimating.current) return;
 

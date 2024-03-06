@@ -11,7 +11,7 @@ import "./projectPage.css";
 export default async function Page({ params }: { params: { id: string } }) {
   const project = await getProject(params.id);
   const projects: PreviewProjectsType[] = (await getpreviewProjects()).filter(
-    (project: PreviewProjectsType) => project.currentSlug !== params.id
+    (project: PreviewProjectsType) => project.currentSlug !== params.id,
   );
 
   return (

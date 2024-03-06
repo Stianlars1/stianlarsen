@@ -10,7 +10,7 @@
   margin-top: 1rem;
   min-width: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .project-page__header__quote {
   text-align: center;
@@ -67,4 +67,4 @@
 .project-page .images-gallery .images {
   display: flex;
   gap: 3rem;
-}/*# sourceMappingURL=projectPage.css.map */
+} /*# sourceMappingURL=projectPage.css.map */
