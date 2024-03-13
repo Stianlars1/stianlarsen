@@ -20,4 +20,7 @@ interface ProjectType {
   bigDescription: string;
   images: any | any[];
   content: any;
+  techStack?: string;
+  website?: string;
+  publishedDate?: string;
 }

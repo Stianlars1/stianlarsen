@@ -16,6 +16,15 @@ export const portfolioProject = {
         source: "title",
       },
     },
+    {
+      name: "publishedDate",
+      type: "date",
+      title: "Published Date",
+      description: "The date the article was published",
+      options: {
+        dateFormat: "DD.MM.YYYY", // Display format in Sanity Studio (for UI only)
+      },
+    },
 
     { name: "titleImage", type: "image", title: "Title image" },
     { name: "previewLogo", type: "image", title: "Logo image" },
@@ -28,6 +37,46 @@ export const portfolioProject = {
     { name: "imageDescription", type: "text", title: "Image description" },
     { name: "smallDescription", type: "text", title: "Small description" },
     { name: "bigDescription", type: "text", title: "Big description" },
+    { name: "website", type: "text", title: "Website url" },
+    {
+      name: "techStack",
+      type: "array",
+      title: "Tech Stack",
+      description: "Select technologies used",
+      of: [
+        {
+          type: "string",
+          options: {
+            list: [
+              { title: "Algolia", value: "ALGOLIA" },
+              { title: "Amazon Web Services", value: "AWS" },
+              { title: "ChatGPT", value: "CHATGPT" },
+              { title: "C#", value: "CSHARP" },
+              { title: ".NET", value: "DOTNET" },
+              { title: "Figma", value: "FIGMA" },
+              { title: "Firebase", value: "FIREBASE" },
+              { title: "Framer Motion", value: "FRAMERMOTION" },
+              { title: "GitHub", value: "GITHUB" },
+              { title: "HTML", value: "HTML" },
+              { title: "Java", value: "JAVA" },
+              { title: "JavaScript", value: "JAVASCRIPT" },
+              { title: "Kotlin", value: "KOTLIN" },
+              { title: "Less", value: "LESS" },
+              { title: "MySQL", value: "MYSQL" },
+              { title: "Next.js", value: "NEXTJS" },
+              { title: "Node.js", value: "NODE" },
+              { title: "Python", value: "PYTHON" },
+              { title: "React", value: "REACT" },
+              { title: "Sanity", value: "SANITY" },
+              { title: "SCSS", value: "SCSS" },
+              { title: "Slack", value: "SLACK" },
+              { title: "TypeScript", value: "TYPESCRIPT" },
+              // Add more technologies as needed
+            ],
+          },
+        },
+      ],
+    },
     {
       name: "images",
       type: "array",

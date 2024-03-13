@@ -27,7 +27,7 @@ export const ProjectsPreview = ({
   title?: string;
 }) => {
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true }),
+    Autoplay({ delay: 2000, stopOnInteraction: true })
   );
   const router = useRouter();
 
@@ -60,11 +60,11 @@ export const ProjectsPreview = ({
             {projects.map((project, index) => {
               const foregroundColor = darkenColor(
                 project.previewLogoBackgroundColor,
-                -50,
+                -50
               );
               const darkenedBackgroundColor = darkenColor(
                 project.previewLogoBackgroundColor,
-                30,
+                30
               );
               return (
                 <CarouselItem key={index} className="pl-1  ">

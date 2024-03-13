@@ -1,10 +1,14 @@
 import { SuspenseLoading } from "@/components/main/loading/loading";
 import { getpreviewProjects } from "@/components/main/projectsPreview/api";
 import { ProjectsPreview } from "@/components/main/projectsPreview/projectsPreview";
+import { Button } from "@/components/ui/button";
 import { urlFor } from "@/lib/sanity";
+import { format } from "date-fns";
+import { nb } from "date-fns/locale";
 import Image from "next/image";
 import { Suspense } from "react";
 import { getProject } from "./api";
+import { CreatedWith } from "./components/createdWith";
 import SanityContent from "./components/sanityContent";
 import "./projectPage.css";
 
@@ -30,6 +34,16 @@ export default async function Page({ params }: { params: { id: string } }) {
             )}
             {project.title}
           </h1>
+          {project.publishedDate && (
+            <p className="project-page__header__published">
+              Published {getSanityDate(project.publishedDate)}
+            </p>
+          )}
+
+          <Button className="project-page__header__websiteLink">
+            <a href={project.website}>Check out the website</a>
+          </Button>
+
           <p className="project-page__header__subtitle">
             {project.bigDescription}
           </p>
@@ -38,12 +52,18 @@ export default async function Page({ params }: { params: { id: string } }) {
             alt="alt"
             className="header-image"
           />
-          <blockquote className="project-page__header__quote">
+          <figcaption className="project-page__header__quote">
             ({project.imageDescription})
-          </blockquote>
+          </figcaption>
         </header>
 
         <SanityContent value={project.content} />
+
+        {project?.techStack && (
+          <>
+            <CreatedWith techStack={project.techStack} />
+          </>
+        )}
 
         {project.mockupImage && (
           <div className="mockup-images">
@@ -53,7 +73,7 @@ export default async function Page({ params }: { params: { id: string } }) {
           </div>
         )}
 
-        {project.images && (
+        {project.images && project.images.length > 0 && (
           <div className="images-gallery">
             <h2>More images</h2>
             <p>Gallery showcasing the project</p>
@@ -80,3 +100,9 @@ export default async function Page({ params }: { params: { id: string } }) {
     </Suspense>
   );
 }
+
+const getSanityDate = (publishedDate: string) => {
+  return format(new Date(publishedDate), "dd.MM.yyyy", {
+    locale: nb,
+  });
+};

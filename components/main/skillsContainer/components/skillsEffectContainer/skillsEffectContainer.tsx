@@ -5,6 +5,7 @@ import { useAnimate, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { AlgoliaLogo } from "../../icons/algolia";
 import { AwsLogo } from "../../icons/aws";
+import { ChatGPTLogo } from "../../icons/chatgpt";
 import { CSharpLogo } from "../../icons/csharp";
 import { DotNetLogo } from "../../icons/dotNet";
 import { Figmalogo } from "../../icons/figma";
@@ -18,10 +19,12 @@ import { KotlinLogo } from "../../icons/kotlin";
 import { LessLogo } from "../../icons/less";
 import { MySqlLogo } from "../../icons/mysql";
 import { NextJsLogo } from "../../icons/nextjs";
+import { NodeLogo } from "../../icons/node";
 import { PythonLogo } from "../../icons/python";
 import { ReactLogo } from "../../icons/react";
 import { SanityLogo } from "../../icons/sanity";
 import { ScssLogo } from "../../icons/scss";
+import { SlackLogo } from "../../icons/slack";
 import { TypescriptLogo } from "../../icons/typescript";
 import "./SkillsEffectContainer.css";
 
@@ -57,21 +60,21 @@ export const SkillsEffectContainer = () => {
         rotate: 45,
         marginTop: "3.5rem",
       },
-      { duration: 0.5, delay: 0.8 },
+      { duration: 0.5, delay: 0.8 }
     );
     if (!isAnimating.current) return;
 
     await animate(
       "#one",
       { backgroundColor: "blue", borderRadius: "40%", scale: 1.5, rotate: 90 },
-      { duration: 0.5 },
+      { duration: 0.5 }
     );
     if (!isAnimating.current) return;
 
     await animate(
       "#one",
       { backgroundColor: "red", borderRadius: "20%", scale: 2, rotate: -180 },
-      { duration: 0.5 },
+      { duration: 0.5 }
     );
     if (!isAnimating.current) return;
 
@@ -83,7 +86,7 @@ export const SkillsEffectContainer = () => {
         scale: 1.5,
         rotate: 45,
       },
-      { duration: 0.5 },
+      { duration: 0.5 }
     );
     if (!isAnimating.current) return;
 
@@ -96,7 +99,7 @@ export const SkillsEffectContainer = () => {
         scale: 1,
         marginTop: "0",
       },
-      { duration: 0.5 },
+      { duration: 0.5 }
     );
     if (!isAnimating.current) return;
 
@@ -110,7 +113,7 @@ export const SkillsEffectContainer = () => {
         padding: "20px",
         minHeight: "140px",
       },
-      { duration: 0.5 },
+      { duration: 0.5 }
     );
     if (!isAnimating.current) return;
 
@@ -126,7 +129,7 @@ export const SkillsEffectContainer = () => {
         height: "auto",
         padding: "20px",
       },
-      { duration: 0.5 },
+      { duration: 0.5 }
     );
     if (!isAnimating.current) return;
 
@@ -134,7 +137,7 @@ export const SkillsEffectContainer = () => {
     await animate(
       "#icons",
       { scale: 1, opacity: 1, display: "flex" },
-      { duration: 0.5 },
+      { duration: 0.5 }
     );
     if (!isAnimating.current) return;
 
@@ -197,6 +200,12 @@ export const SkillsEffectContainer = () => {
     if (!isAnimating.current) return;
 
     await animate(".figma", iconsAnimation, { duration: iconsDuration });
+    if (!isAnimating.current) return;
+    await animate(".node", iconsAnimation, { duration: iconsDuration });
+    if (!isAnimating.current) return;
+    await animate(".slack", iconsAnimation, { duration: iconsDuration });
+    if (!isAnimating.current) return;
+    await animate(".chatgpt", iconsAnimation, { duration: iconsDuration });
   };
 
   useEffect(() => {
@@ -231,6 +240,9 @@ export const SkillsEffectContainer = () => {
     animate(".python", iconsAnimationInitial);
     animate(".csharp", iconsAnimationInitial);
     animate(".figma", iconsAnimationInitial);
+    animate(".node", iconsAnimationInitial);
+    animate(".slack", iconsAnimationInitial);
+    animate(".chatgpt", iconsAnimationInitial);
 
     const timer = setTimeout(() => {
       if (isInView) {
@@ -268,6 +280,9 @@ export const SkillsEffectContainer = () => {
           <PythonLogo className="python logo light-bg" />
           <CSharpLogo className="csharp logo light-bg" />
           <Figmalogo className="figma logo light-bg" />
+          <NodeLogo className="node logo light-bg" />
+          <SlackLogo className="slack logo light-bg" />
+          <ChatGPTLogo className="chatgpt logo light-bg" />
         </div>
       </div>
     </div>

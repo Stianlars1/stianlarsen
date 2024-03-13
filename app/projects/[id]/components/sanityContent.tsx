@@ -18,9 +18,15 @@ const myPortableTextComponents: PortableTextComponents = {
           src={urlFor(value)}
           alt={value.altText || "No alt text"}
         />
-        <blockquote style={{ textAlign: "center", margin: "0 auto" }}>
-          ({value.caption})
-        </blockquote>
+        <figcaption
+          style={{
+            textAlign: "center",
+            margin: "4px auto 1.1rem",
+            fontSize: "12px",
+          }}
+        >
+          ( {value.caption} )
+        </figcaption>
       </>
     ),
     callToAction: ({ value, isInline }) =>
@@ -79,7 +85,6 @@ const myPortableTextComponents: PortableTextComponents = {
 const SanityContent: React.FC<SanityContentProps> = ({
   value,
 }): ReactElement => {
-  console.log("value", value);
   return (
     <article className="article-wrapper">
       <PortableText value={value} components={myPortableTextComponents} />

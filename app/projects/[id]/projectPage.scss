@@ -1,4 +1,5 @@
 .project-page {
+  margin-top: 64px;
   &__header {
     text-align: center;
     @media screen and (max-width: 768px) {
@@ -11,8 +12,16 @@
       object-fit: cover;
     }
 
+    &__published {
+      font-size: 12px;
+      font-style: italic;
+      margin-top: 24px;
+    }
+
     &__quote {
       text-align: center;
+      font-size: 12px;
+      margin: 4px;
     }
 
     &__title {
@@ -48,6 +57,11 @@
       margin-top: 24px;
       text-align: left;
     }
+
+    &__websiteLink {
+      margin-top: 24px;
+      text-align: left;
+    }
   }
 
   .article-wrapper {
@@ -71,6 +85,14 @@
   h6 {
     font-weight: 800;
     margin-top: 24px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 20px;
   }
 
   .images-gallery {
