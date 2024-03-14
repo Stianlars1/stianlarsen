@@ -27,11 +27,21 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: radial-gradient(0, 0, 0, 0) 0.1px, white 0.1px;
+  background-image:
+    radial-gradient(0, 0, 0, 0) 0.1px,
+    white 0.1px;
   background-size: 1px 1px;
   -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   z-index: -1;
+}
+.navbar-header .navbar .ul-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-width: 0;
+  max-width: 100%;
+  gap: 1rem;
 }
 .navbar-header .navbar .ul-wrapper nav ul {
   position: relative;
@@ -46,9 +56,11 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: radial-gradient(0, 0, 0, 0) 0.1px, white 0.1px;
+  background-image:
+    radial-gradient(0, 0, 0, 0) 0.1px,
+    white 0.1px;
   background-size: 1px 1px;
   -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   z-index: -1;
-}/*# sourceMappingURL=navbar.css.map */
+} /*# sourceMappingURL=navbar.css.map */

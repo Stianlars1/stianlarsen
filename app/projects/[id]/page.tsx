@@ -15,27 +15,25 @@ import "./projectPage.css";
 export default async function Page({ params }: { params: { id: string } }) {
   const project = await getProject(params.id);
   const projects: PreviewProjectsType[] = (await getpreviewProjects()).filter(
-    (project: PreviewProjectsType) => project.currentSlug !== params.id
+    (project: PreviewProjectsType) => project.currentSlug !== params.id,
   );
 
   return (
     <Suspense fallback={<SuspenseLoading />}>
       <div className="project-page">
         <header className="project-page__header">
-          <h1 className="project-page__header__title">
-            {project.previewLogo && (
-              <Image
-                src={urlFor(project.previewLogo)}
-                width={50}
-                height={50}
-                alt="logo"
-                className="logo-image"
-              />
-            )}
-            {project.title}
-          </h1>
+          <h1 className="project-page__header__title">{project.title}</h1>
           {project.publishedDate && (
             <p className="project-page__header__published">
+              {project.previewLogo && (
+                <Image
+                  src={urlFor(project.previewLogo)}
+                  width={24}
+                  height={24}
+                  alt="logo"
+                  className="logo-image"
+                />
+              )}
               Published {getSanityDate(project.publishedDate)}
             </p>
           )}
@@ -47,12 +45,20 @@ export default async function Page({ params }: { params: { id: string } }) {
           <p className="project-page__header__subtitle">
             {project.bigDescription}
           </p>
-          <img
+
+          <Image
             src={urlFor(project.titleImage)}
             alt="alt"
             className="header-image"
+            width={0}
+            height={0}
+            sizes="70vw"
+            style={{ width: "70%", height: "auto" }} // optional
           />
-          <figcaption className="project-page__header__quote">
+          <figcaption
+            className="project-page__header__quote"
+            style={{ width: "70%" }}
+          >
             ({project.imageDescription})
           </figcaption>
         </header>
@@ -69,7 +75,18 @@ export default async function Page({ params }: { params: { id: string } }) {
           <div className="mockup-images">
             <h2>Mockup</h2>
             <p>Below you can see some mockups of the project</p>
-            <img src={urlFor(project.mockupImage)} alt="alt" />
+            <div
+              style={{ width: "100%", height: "100%", position: "relative" }}
+            >
+              <Image
+                alt="mock-image"
+                src={urlFor(project.mockupImage)}
+                width={0}
+                height={0}
+                sizes="70vw"
+                style={{ width: "70%", height: "auto" }} // optional
+              />
+            </div>
           </div>
         )}
 
@@ -80,22 +97,27 @@ export default async function Page({ params }: { params: { id: string } }) {
             <div className="images">
               {project.images.map((image: any, index: number) => {
                 return (
-                  <img src={urlFor(image)} alt="gallery image" key={index} />
+                  <Image
+                    key={index}
+                    alt="gallery image"
+                    src={urlFor(image)}
+                    width={0}
+                    height={0}
+                    sizes="90vw"
+                    style={{ width: "90%", height: "auto" }} // optional
+                  />
                 );
               })}
             </div>
           </div>
         )}
 
-        <ProjectsPreview title={"Other projects"} projects={projects} />
+        <ProjectsPreview
+          title={"Other projects"}
+          projects={projects}
+          noDelay={true}
+        />
         {!project && "No project found with that id."}
-
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
       </div>
     </Suspense>
   );

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { HamburgerMenu } from "../hamburgerMenu/hamburgerMenu";
 import { ModeToggle } from "../modeToggle";
 import { FramerMotionNavbar } from "./components/framerMotionNavbar";
@@ -12,12 +11,11 @@ export const Navbar = () => {
 
       <header className="navbar-header">
         <div className="navbar">
-          {/* <Image alt={"Stian Larsen - website logo"} /> */}
           <div className="flex items-center justify-between topleftLogo">
             <TopleftLogo />
           </div>
 
-          <div className="flex justify-between items-center gap-4 ul-wrapper">
+          <div className="ul-wrapper navbar-items">
             <NavItems />
             <ModeToggle />
             <HamburgerMenu />
@@ -30,9 +28,9 @@ export const Navbar = () => {
 
 const TopleftLogo = () => {
   return (
-    <Link href={"/"} prefetch={true} style={{ whiteSpace: "nowrap" }}>
+    <a href={"/"} style={{ whiteSpace: "nowrap" }}>
       <code>{"{ Stian"}</code> <code className="text-primary">{`Larsen`}</code>{" "}
       <code>{"}"}</code>
-    </Link>
+    </a>
   );
 };

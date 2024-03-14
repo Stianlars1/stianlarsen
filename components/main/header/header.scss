@@ -19,7 +19,7 @@
     position: relative;
     height: max-content;
 
-    margin-top: calc(140px);
+    margin-top: 140px;
 
     &__h1 {
       font-size: 6.5rem;
@@ -33,6 +33,17 @@
 
       span {
         white-space: nowrap;
+      }
+
+      .mobileH1 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: -80px;
+
+        > span {
+          margin-left: 0;
+        }
       }
     }
   }
@@ -68,6 +79,10 @@
       position: relative;
       max-width: 900px;
       height: fit-content;
+
+      .mobileH1 {
+        margin-top: -40px;
+      }
     }
   }
 }
@@ -78,6 +93,10 @@
       font-size: 4.5rem;
       line-height: 80px;
       max-width: 600px;
+
+      .mobileH1 {
+        margin-top: 0px;
+      }
     }
   }
 }
@@ -89,9 +108,6 @@
 }
 
 @media screen and (max-width: 550px) {
-  .main-header__wrapper {
-    padding: 60px 0 60px;
-  }
   .main-header__wrapper__h1 {
     font-size: 3rem;
     line-height: 50px;

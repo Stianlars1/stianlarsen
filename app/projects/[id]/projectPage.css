@@ -1,29 +1,32 @@
 .project-page {
-  margin-top: 64px;
+  margin: 64px 0 32px;
 }
 .project-page__header {
   text-align: center;
-}
-@media screen and (max-width: 768px) {
-  .project-page__header {
-    text-align: left;
-  }
-}
-.project-page__header .header-image {
-  margin-top: 1rem;
-  min-width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 .project-page__header__published {
   font-size: 12px;
   font-style: italic;
   margin-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.project-page__header__published .logo-image {
+  width: 24px;
+  height: 24px;
+  border-radius: 0.25rem;
+}
+.project-page__header__websiteLink {
+  margin-top: 24px;
+  text-align: left;
+  color: white;
 }
 .project-page__header__quote {
   text-align: center;
   font-size: 12px;
-  margin: 4px;
+  margin: 4px auto;
 }
 .project-page__header__title {
   font-weight: 600;
@@ -35,20 +38,7 @@
   margin: 0 auto;
   text-align: center;
   gap: 1rem;
-}
-.project-page__header__title .logo-image {
-  width: 50px;
-  height: 50px;
-}
-@media screen and (max-width: 768px) {
-  .project-page__header__title {
-    font-size: 20px;
-    text-align: left;
-  }
-  .project-page__header__title .logo-image {
-    width: 40px;
-    height: 40px;
-  }
+  text-wrap: balance;
 }
 .project-page__header__subtitle {
   font-weight: 400;
@@ -56,12 +46,19 @@
   margin-top: 24px;
   text-align: left;
 }
-.project-page__header__websiteLink {
-  margin-top: 24px;
-  text-align: left;
+.project-page__header .header-image {
+  margin: 1rem auto 0;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 .project-page .article-wrapper p {
   margin-bottom: 0;
+}
+.project-page .mockup-images {
+  margin-bottom: 64px;
+}
+.project-page .mockup-images p {
+  margin-bottom: 1rem;
 }
 .project-page .images {
   display: flex;
@@ -77,6 +74,7 @@
 .project-page h6 {
   font-weight: 800;
   margin-top: 24px;
+  text-wrap: pretty;
 }
 .project-page h2 {
   font-size: 24px;
@@ -87,4 +85,49 @@
 .project-page .images-gallery .images {
   display: flex;
   gap: 3rem;
-}/*# sourceMappingURL=projectPage.css.map */
+}
+
+@media screen and (max-width: 768px) {
+  .project-page {
+    margin-top: 32px;
+  }
+  .project-page__header {
+    text-align: left;
+  }
+  .project-page__header .header-image {
+    width: 80% !important;
+  }
+  .project-page__header__published {
+    justify-content: flex-start;
+  }
+  .project-page__header__quote {
+    width: 80% !important;
+  }
+  .project-page__header__title {
+    font-size: 2rem;
+    text-align: left;
+  }
+  .project-page__header__subtitle {
+    font-size: 1.1rem;
+  }
+  .project-page .article-wrapper .sanity-content-image {
+    width: 80% !important;
+  }
+  .project-page .article-wrapper .sanity-content-caption {
+    width: 80% !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .project-page__header .header-image {
+    width: 100% !important;
+  }
+  .project-page__header__quote {
+    width: 100% !important;
+  }
+  .project-page .article-wrapper .sanity-content-image {
+    width: 100% !important;
+  }
+  .project-page .article-wrapper .sanity-content-caption {
+    width: 100% !important;
+  }
+} /*# sourceMappingURL=projectPage.css.map */

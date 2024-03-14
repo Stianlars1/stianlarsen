@@ -4,6 +4,7 @@ import React, { ReactElement } from "react";
 // Assuming you have a TypeScript type for your Portable Text content
 import { urlFor } from "@/lib/sanity";
 import { PortableTextBlock } from "@portabletext/types";
+import Image from "next/image";
 
 interface SanityContentProps {
   value: PortableTextBlock[]; // This should match the structure of your Portable Text content
@@ -13,17 +14,25 @@ const myPortableTextComponents: PortableTextComponents = {
   types: {
     image: ({ value }) => (
       <>
-        <img
-          style={{ marginTop: "1rem" }}
+        <Image
           src={urlFor(value)}
           alt={value.altText || "No alt text"}
+          className="sanity-content-image"
+          width={0}
+          height={0}
+          sizes="70vw"
+          style={{ width: "70%", height: "auto", margin: "1rem auto 0" }}
         />
+
         <figcaption
           style={{
             textAlign: "center",
             margin: "4px auto 1.1rem",
             fontSize: "12px",
+            width: "70%",
+            textWrap: "pretty",
           }}
+          className="sanity-content-caption"
         >
           ( {value.caption} )
         </figcaption>

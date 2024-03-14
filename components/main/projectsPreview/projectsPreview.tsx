@@ -22,19 +22,17 @@ import { darkenColor } from "./util";
 export const ProjectsPreview = ({
   projects,
   title,
+  noDelay,
 }: {
   projects: PreviewProjectsType[];
   title?: string;
+  noDelay?: boolean;
 }) => {
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
+    Autoplay({ delay: 2000, stopOnInteraction: true }),
   );
   const router = useRouter();
 
-  // Darken the background color by 20%
-  const handleNavigate = (projectId: string) => {
-    router.push(`/projects/${projectId}`);
-  };
   return (
     <section id="projects" className="projects">
       <Reveal type="right" delay={0.55}>
@@ -47,7 +45,7 @@ export const ProjectsPreview = ({
       <Reveal
         type="right"
         width="100%"
-        delay={0.65}
+        delay={noDelay ? 0.4 : 0.65}
         className={"carousel_wrapper"}
       >
         <Carousel
@@ -60,11 +58,11 @@ export const ProjectsPreview = ({
             {projects.map((project, index) => {
               const foregroundColor = darkenColor(
                 project.previewLogoBackgroundColor,
-                -50
+                -50,
               );
               const darkenedBackgroundColor = darkenColor(
                 project.previewLogoBackgroundColor,
-                30
+                30,
               );
               return (
                 <CarouselItem key={index} className="pl-1  ">
@@ -75,7 +73,7 @@ export const ProjectsPreview = ({
                     >
                       <CardContent className="flex flex-col gap-3  min-h-[250px] items-center justify-center p-6 projects__list__item__content">
                         <h3
-                          className="text-4xl font-semibold"
+                          className="preview-title font-semibold"
                           style={{ color: foregroundColor }}
                         >
                           {project.title}
@@ -102,38 +100,4 @@ export const ProjectsPreview = ({
       </Reveal>
     </section>
   );
-
-  // return (
-  //   <section id="projects" className="projects">
-  //     {projects.map((project: PreviewProjectsType) => {
-  // // Darken the background color by 20%
-  // const darkenedBackgroundColor = darkenColor(
-  //   project.previewLogoBackgroundColor,
-  //   30
-  // );
-  //       return <></>;
-
-  //       // return (
-  //       //   <article key={project.currentSlug} className="projects__article">
-  //       //     <div
-  //       //       className="projects__article__header"
-  //       //       style={{ backgroundColor: darkenedBackgroundColor }}
-  //       //     >
-  //       //       <Image
-  //       //         src={urlFor(project.previewLogo).url()}
-  //       //         alt={`image of ${project.title}`}
-  //       //         width={35}
-  //       //         height={35}
-  //       //         className="object-cover"
-  //       //       />
-  //       //       {project.title}
-  //       //     </div>
-  //       //     <div className="projects__article__content">
-  //       //       <p>{project.smallDescription}</p>
-  //       //     </div>
-  //       //   </article>
-  //       // );
-  //     })}
-  //   </section>
-  // );
 };

@@ -19,7 +19,6 @@ export const CreatedWith = ({ techStack }: { techStack: string }) => {
         {techs.map((tech, index) => {
           // Normalize the tech name to match keys in techLogos map
           const techKey = tech.toUpperCase().trim() as keyof typeof TechLogos;
-          console.log("tchKey", techKey);
           const TechLogo = TechLogos[techKey].logo;
           const websiteUrl = TechLogos[techKey].website;
           const techTitle = TechLogos[techKey].title;

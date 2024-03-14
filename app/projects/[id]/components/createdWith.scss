@@ -5,6 +5,7 @@
   }
   .tech {
     display: flex;
+    flex-wrap: wrap;
     gap: 1.2rem;
     .tech-item {
       display: flex;

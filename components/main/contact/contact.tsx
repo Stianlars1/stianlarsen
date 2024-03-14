@@ -23,9 +23,3 @@ export const ContactMe = () => {
 
 const paragraphText =
   "  Interested in discussing tech, coding, or potential collaborations? I'm always open to connecting over new ideas or projects. Feel free to reach out—let's explore what we can create together.";
-//   "Got a question, a project in mind, or just feel like talking tech? I'm always interested in hearing from fellow developers, tech enthusiasts, or anyone curious about what I do. While I'm currently happily employed, I'm open to networking, sharing ideas, and learning about new opportunities. So, if you'd like to chat, share insights, or discuss potential collaborations, feel free to reach out. Let's connect and explore the possibilities.";
-
-// Get in Touch
-// Let's Connect:
-// Say Hello
-// Reach Out

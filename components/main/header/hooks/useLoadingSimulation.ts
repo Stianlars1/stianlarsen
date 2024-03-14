@@ -1,5 +1,4 @@
 "use client";
-// useLoadingSimulation.js
 import { useEffect, useState } from "react";
 
 const useLoadingSimulation = (startLoading = true, totalDuration = 10000) => {

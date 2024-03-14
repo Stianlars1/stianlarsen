@@ -4,6 +4,7 @@
 }
 .created-with .tech {
   display: flex;
+  flex-wrap: wrap;
   gap: 1.2rem;
 }
 .created-with .tech .tech-item {
@@ -24,4 +25,4 @@
 }
 .created-with .tech .dark {
   background-color: black;
-}/*# sourceMappingURL=createdWith.css.map */
+} /*# sourceMappingURL=createdWith.css.map */

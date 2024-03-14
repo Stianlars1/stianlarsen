@@ -5,8 +5,6 @@ import sgMail, { MailDataRequired } from "@sendgrid/mail";
 sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY || "");
 
 export async function sendEmail({
-  fromName,
-  fromEmail,
   subject,
   message,
   html,
