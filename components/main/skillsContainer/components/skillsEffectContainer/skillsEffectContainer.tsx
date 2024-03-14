@@ -33,7 +33,7 @@ const iconsAnimationInitial = { y: 10, opacity: 0, display: "none" };
 
 const iconsAnimation = { y: 0, opacity: 1, display: "initial" };
 
-export const SkillsEffectContainer = () => {
+const SkillsEffectContainer = () => {
   const isAnimating = useRef(true);
 
   const [scope, animate] = useAnimate();
@@ -316,3 +316,5 @@ export const SkillsEffectContainer = () => {
     </div>
   );
 };
+
+export default SkillsEffectContainer;

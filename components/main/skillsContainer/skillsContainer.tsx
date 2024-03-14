@@ -1,9 +1,18 @@
 "use client";
 import { Reveal } from "@/components/reveal";
+import dynamic from "next/dynamic";
 import { Heading2 } from "../typography/headings";
-import { SkillsEffectContainer } from "./components/skillsEffectContainer/skillsEffectContainer";
 import "./css/skillsContainer.css";
-export const SkillsContainer = () => {
+import { de } from "date-fns/locale";
+
+const SkillsEffectContainer = dynamic(
+  () => import("./components/skillsEffectContainer/skillsEffectContainer"),
+  {
+    ssr: false,
+  }
+);
+
+const SkillsContainer = () => {
   return (
     <section className="skills">
       <Reveal type="right" delay={0.55}>
@@ -16,3 +25,5 @@ export const SkillsContainer = () => {
     </section>
   );
 };
+
+export default SkillsContainer;

@@ -4,8 +4,14 @@ import StarsCanvas from "@/components/main/header/components/starBackground";
 import { Header } from "@/components/main/header/header";
 import { getpreviewProjects } from "@/components/main/projectsPreview/api";
 import { ProjectsPreview } from "@/components/main/projectsPreview/projectsPreview";
-import { SkillsContainer } from "@/components/main/skillsContainer/skillsContainer";
+import dynamic from "next/dynamic";
 
+const SkillsContainer = dynamic(
+  () => import("@/components/main/skillsContainer/skillsContainer"),
+  {
+    ssr: false,
+  }
+);
 export default async function Home() {
   const projects: PreviewProjectsType[] = await getpreviewProjects();
   return (
