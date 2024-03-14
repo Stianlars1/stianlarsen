@@ -278,7 +278,7 @@ const SkillsEffectContainer = () => {
       isAnimating.current = false; // Prevents further animations
       clearTimeout(timer);
     };
-  }, [isInView]);
+  }, [isInView, animate]);
 
   return (
     <div ref={scope} className="effect-container">
