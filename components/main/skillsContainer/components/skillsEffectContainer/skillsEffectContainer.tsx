@@ -46,10 +46,14 @@ export const SkillsEffectContainer = () => {
   });
 
   const getComputedStyleValue = (variable: string) => {
-    // Retrieves the raw HSL value from CSS variable
-    return getComputedStyle(document.documentElement).getPropertyValue(
-      variable
-    );
+    // Ensures this runs only in the browser where window is defined
+    if (typeof window !== "undefined") {
+      return getComputedStyle(document.documentElement).getPropertyValue(
+        variable
+      );
+    }
+    // Provide a fallback or default value for server-side rendering
+    return "var(--muted-foreground)"; // Adjust this default value based on your needs
   };
 
   const rawMutedForeground = getComputedStyleValue("--muted-foreground");
