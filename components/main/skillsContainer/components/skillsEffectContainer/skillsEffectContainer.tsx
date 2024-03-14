@@ -45,6 +45,16 @@ export const SkillsEffectContainer = () => {
     margin: "50px",
   });
 
+  const getComputedStyleValue = (variable: string) => {
+    // Retrieves the raw HSL value from CSS variable
+    return getComputedStyle(document.documentElement).getPropertyValue(
+      variable
+    );
+  };
+
+  const rawMutedForeground = getComputedStyleValue("--muted-foreground");
+  const formattedHSLValue = `hsl(${rawMutedForeground.trim()})`; // Ensure it's correctly formatted and trimmed
+
   const startAnimation = async () => {
     const elem = document.querySelector("#one");
     if (!elem) return;
@@ -67,7 +77,7 @@ export const SkillsEffectContainer = () => {
     await animate(
       "#one",
       {
-        backgroundColor: "0000FF",
+        backgroundColor: "#0000FF",
         borderRadius: "40%",
         scale: 1.5,
         rotate: 90,
@@ -103,7 +113,7 @@ export const SkillsEffectContainer = () => {
     await animate(
       "#one",
       {
-        backgroundColor: "hsl(var(--muted-foreground))",
+        backgroundColor: formattedHSLValue,
         borderRadius: "16px",
         rotate: 0,
         scale: 1,
@@ -116,7 +126,7 @@ export const SkillsEffectContainer = () => {
     await animate(
       "#one",
       {
-        backgroundColor: "hsl(var(--muted-foreground))",
+        backgroundColor: formattedHSLValue,
         borderRadius: "16px",
         rotate: 0,
         minWidth: "100%",
@@ -131,7 +141,7 @@ export const SkillsEffectContainer = () => {
     await animate(
       "#one",
       {
-        backgroundColor: "hsl(var(--muted-foreground))",
+        backgroundColor: formattedHSLValue,
         borderRadius: "16px",
         rotate: 0,
 
@@ -268,7 +278,11 @@ export const SkillsEffectContainer = () => {
 
   return (
     <div ref={scope} className="effect-container">
-      <div id="one" className="box">
+      <div
+        id="one"
+        className="box"
+        style={{ backgroundColor: !isDarkmodeActive ? "#d3d3d3" : "#ffffff" }}
+      >
         <div id="icons" className={!isMobile ? "desktopLogo" : ""}>
           <ReactLogo className="react logo dark-bg " />
           <NextJsLogo className="nextjs logo light-bg" />
