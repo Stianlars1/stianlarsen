@@ -53,7 +53,7 @@ export const SkillsEffectContainer = () => {
     await animate(
       "#one",
       {
-        backgroundColor: !isDarkmodeActive ? "#d3d3d3" : "white",
+        backgroundColor: !isDarkmodeActive ? "#d3d3d3" : "#ffffff",
         borderRadius: "20%",
         scale: 2,
         opacity: 1,
@@ -66,14 +66,12 @@ export const SkillsEffectContainer = () => {
 
     await animate(
       "#one",
-      { backgroundColor: "blue", borderRadius: "40%", scale: 1.5, rotate: 90 },
-      { duration: 0.5 }
-    );
-    if (!isAnimating.current) return;
-
-    await animate(
-      "#one",
-      { backgroundColor: "red", borderRadius: "20%", scale: 2, rotate: -180 },
+      {
+        backgroundColor: "0000FF",
+        borderRadius: "40%",
+        scale: 1.5,
+        rotate: 90,
+      },
       { duration: 0.5 }
     );
     if (!isAnimating.current) return;
@@ -81,7 +79,19 @@ export const SkillsEffectContainer = () => {
     await animate(
       "#one",
       {
-        backgroundColor: "orange",
+        backgroundColor: "#ff0000",
+        borderRadius: "20%",
+        scale: 2,
+        rotate: -180,
+      },
+      { duration: 0.5 }
+    );
+    if (!isAnimating.current) return;
+
+    await animate(
+      "#one",
+      {
+        backgroundColor: "#ffa500",
         borderRadius: "10%",
         scale: 1.5,
         rotate: 45,
