@@ -11,9 +11,9 @@ export const KotlinLogo = ({ className }: { className?: string }) => (
         gradientTransform="translate(31.27 41.62) scale(26.70313)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset=".003" stop-color="#e44857"></stop>
-        <stop offset=".469" stop-color="#c711e1"></stop>
-        <stop offset="1" stop-color="#7f52ff"></stop>
+        <stop offset=".003" stopColor="#e44857"></stop>
+        <stop offset=".469" stopColor="#c711e1"></stop>
+        <stop offset="1" stopColor="#7f52ff"></stop>
       </radialGradient>
     </defs>
     <path fill="url(#a)" d="M32 64H8.727V40.727H32L20.18 52.18Zm0 0"></path>

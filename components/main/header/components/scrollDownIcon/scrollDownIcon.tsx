@@ -20,7 +20,7 @@ export const ScrollDownIcon = () => {
   }, []);
 
   const handleScrollIntoView = (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) => {
     e.preventDefault();
     const href = e.currentTarget.href;
