@@ -4,6 +4,7 @@ import {
   InstagramLogoIcon,
 } from "@radix-ui/react-icons";
 import "./footer.css";
+
 export const Footer = () => {
   return (
     <>
@@ -15,6 +16,7 @@ export const Footer = () => {
             href="https://github.com/stianlars1"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Visit Stian Larsen's GitHub profile"
           >
             <GitHubLogoIcon />
             <span>/stianlars1</span>
@@ -23,6 +25,7 @@ export const Footer = () => {
             href="https://instagram.com/stianlarsen"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Visit Stian Larsen's Instagram profile"
           >
             <InstagramLogoIcon />
             <span>stianlarsen</span>
@@ -31,6 +34,7 @@ export const Footer = () => {
             href="mailto:stian.larsen@mac.com"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Send an email to Stian Larsen"
           >
             <EnvelopeClosedIcon />
             <span>stian.larsen@mac.com</span>
