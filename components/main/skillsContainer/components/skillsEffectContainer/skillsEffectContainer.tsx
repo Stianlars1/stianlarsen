@@ -49,7 +49,7 @@ const SkillsEffectContainer = () => {
     // Ensures this runs only in the browser where window is defined
     if (typeof window !== "undefined") {
       return getComputedStyle(document.documentElement).getPropertyValue(
-        variable
+        variable,
       );
     }
     // Provide a fallback or default value for server-side rendering
@@ -74,7 +74,7 @@ const SkillsEffectContainer = () => {
         rotate: 45,
         marginTop: "3.5rem",
       },
-      { duration: 0.5, delay: 0.8 }
+      { duration: 0.5, delay: 0.8 },
     );
     if (!isAnimating.current) return;
 
@@ -86,7 +86,7 @@ const SkillsEffectContainer = () => {
         scale: 1.5,
         rotate: 90,
       },
-      { duration: 0.5 }
+      { duration: 0.5 },
     );
     if (!isAnimating.current) return;
 
@@ -98,7 +98,7 @@ const SkillsEffectContainer = () => {
         scale: 2,
         rotate: -180,
       },
-      { duration: 0.5 }
+      { duration: 0.5 },
     );
     if (!isAnimating.current) return;
 
@@ -110,7 +110,7 @@ const SkillsEffectContainer = () => {
         scale: 1.5,
         rotate: 45,
       },
-      { duration: 0.5 }
+      { duration: 0.5 },
     );
     if (!isAnimating.current) return;
 
@@ -123,7 +123,7 @@ const SkillsEffectContainer = () => {
         scale: 1,
         marginTop: "0",
       },
-      { duration: 0.5 }
+      { duration: 0.5 },
     );
     if (!isAnimating.current) return;
 
@@ -137,7 +137,7 @@ const SkillsEffectContainer = () => {
         padding: "20px",
         minHeight: "140px",
       },
-      { duration: 0.5 }
+      { duration: 0.5 },
     );
     if (!isAnimating.current) return;
 
@@ -153,7 +153,7 @@ const SkillsEffectContainer = () => {
         height: "auto",
         padding: "20px",
       },
-      { duration: 0.5 }
+      { duration: 0.5 },
     );
     if (!isAnimating.current) return;
 
@@ -161,7 +161,7 @@ const SkillsEffectContainer = () => {
     await animate(
       "#icons",
       { scale: 1, opacity: 1, display: "flex" },
-      { duration: 0.5 }
+      { duration: 0.5 },
     );
     if (!isAnimating.current) return;
 

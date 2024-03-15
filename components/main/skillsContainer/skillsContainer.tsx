@@ -9,7 +9,7 @@ const SkillsEffectContainer = dynamic(
   () => import("./components/skillsEffectContainer/skillsEffectContainer"),
   {
     ssr: false,
-  }
+  },
 );
 
 const SkillsContainer = () => {

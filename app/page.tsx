@@ -10,7 +10,7 @@ const SkillsContainer = dynamic(
   () => import("@/components/main/skillsContainer/skillsContainer"),
   {
     ssr: false,
-  }
+  },
 );
 export default async function Home() {
   const projects: PreviewProjectsType[] = await getpreviewProjects();
