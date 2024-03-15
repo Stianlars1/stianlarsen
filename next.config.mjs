@@ -27,6 +27,36 @@ const nextConfig = {
 
     return config;
   },
+
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=31536000; includeSubDomains; preload",
+          },
+        ],
+      },
+    ];
+  },
+
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "www.stianlarsen.com",
+          },
+        ],
+        permanent: true,
+        destination: "https://stianlarsen.com/:path*",
+      },
+    ];
+  },
 };
 
 export default nextConfig;
