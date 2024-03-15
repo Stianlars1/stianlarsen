@@ -4,7 +4,6 @@ import { roboto_mono } from "./fonts";
 import { Footer } from "@/components/main/footer/footer";
 import { Navbar } from "@/components/main/navbar/navbar";
 import { Toaster } from "@/components/ui/toaster";
-import Head from "next/head";
 import "./globals.css";
 import "./layout.css";
 import { Providers } from "./providers";
@@ -54,6 +53,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.stianlarsen.com",
   },
+
+  icons: {
+    icon: "/favicons/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -64,43 +67,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${roboto_mono.className}`}>
-        <Head>
-          <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
-
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/favicons/favicon-16x16.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/favicons/favicon-32x32.png"
-          />
-
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="192x192"
-            href="/favicons/android-chrome-192x192.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="512x512"
-            href="/favicons/android-chrome-512x512.png"
-          />
-
-          <meta name="apple-mobile-web-app-capable" content="yes" />
-          <meta name="mobile-web-app-capable" content="yes" />
-
-          <meta
-            name="msapplication-square150x150logo"
-            content="/favicons/mstile-150x150.png"
-          />
-        </Head>
         <Providers>
           <Navbar />
           <main className="px-[20px]">{children}</main>
