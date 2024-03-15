@@ -41,7 +41,7 @@ export const metadata: Metadata = {
       "Explore Stian Larsen's Fullstack Development portfolio, a blend of front-end and back-end projects demonstrating expertise in web development and computer engineering. Showcasing professional achievements and innovative personal work, it's a window into his skills and passion for technology.",
     images: [
       {
-        url: "https://www.stianlarsen.com/favicons/android-chrome-512x512.png",
+        url: "https://www.stianlarsen.com/android-chrome-512x512.png",
         width: 512,
         height: 512,
         alt: "Stian Larsen Portfolio",
