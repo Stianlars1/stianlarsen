@@ -1,6 +1,12 @@
 import { Button } from "@/components/ui/button";
+import { Metadata } from "next";
 import { PreviewPDF } from "./components/previewPDF";
 import "./css/resume.css";
+
+export const metadata: Metadata = {
+  title: "CV | resume",
+  description: "Take a look at my CV / resume",
+};
 const ResumePage = () => {
   return (
     <div className="resume">

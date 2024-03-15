@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { urlFor } from "@/lib/sanity";
 import { format } from "date-fns";
 import { nb } from "date-fns/locale";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
@@ -13,10 +14,14 @@ import { CreatedWith } from "./components/createdWith";
 import SanityContent from "./components/sanityContent";
 import "./projectPage.css";
 
+export const metadata: Metadata = {
+  title: "Projects",
+  description: "My projects and work",
+};
 export default async function Page({ params }: { params: { id: string } }) {
   const project = await getProject(params.id);
   const projects: PreviewProjectsType[] = (await getpreviewProjects()).filter(
-    (project: PreviewProjectsType) => project.currentSlug !== params.id,
+    (project: PreviewProjectsType) => project.currentSlug !== params.id
   );
 
   return (
