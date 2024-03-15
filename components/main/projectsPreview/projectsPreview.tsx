@@ -12,6 +12,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { Heading2 } from "../typography/headings";
@@ -80,9 +81,13 @@ export const ProjectsPreview = ({
 
                         <p>{project.smallDescription}</p>
 
-                        <a href={`/projects/${project.currentSlug}`}>
+                        <Link
+                          href={`/projects/${project.currentSlug}`}
+                          scroll={true}
+                          prefetch={true}
+                        >
                           <Button variant={"secondary"}>Read more</Button>
-                        </a>
+                        </Link>
                       </CardContent>
                     </Card>
                   </div>

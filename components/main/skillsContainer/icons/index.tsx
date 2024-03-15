@@ -133,7 +133,7 @@ export const TechLogos = {
   },
   REACT: {
     logo: ReactLogo,
-    website: "https://reactjs.dev/",
+    website: "https://react.dev/",
     title: "React",
     dark: true,
   },

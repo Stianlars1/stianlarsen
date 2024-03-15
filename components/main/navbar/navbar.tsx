@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { HamburgerMenu } from "../hamburgerMenu/hamburgerMenu";
 import { ModeToggle } from "../modeToggle";
 import { FramerMotionNavbar } from "./components/framerMotionNavbar";
@@ -28,9 +29,9 @@ export const Navbar = () => {
 
 const TopleftLogo = () => {
   return (
-    <a href={"/"} style={{ whiteSpace: "nowrap" }}>
+    <Link href={"/"} style={{ whiteSpace: "nowrap" }} prefetch={true}>
       <code>{"{ Stian"}</code> <code className="text-primary">{`Larsen`}</code>{" "}
       <code>{"}"}</code>
-    </a>
+    </Link>
   );
 };
