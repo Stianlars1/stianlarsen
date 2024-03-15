@@ -10,7 +10,7 @@ const SkillsContainer = dynamic(
   () => import("@/components/main/skillsContainer/skillsContainer"),
   {
     ssr: false,
-  }
+  },
 );
 export default async function Home() {
   const projects: PreviewProjectsType[] = await getpreviewProjects();
@@ -19,7 +19,7 @@ export default async function Home() {
       <Header />
       <AboutMe />
       <ProjectsPreview projects={projects} />
-      {/* <SkillsContainer /> */}
+      <SkillsContainer />
       <ContactMe />
       <StarsCanvas />
     </>

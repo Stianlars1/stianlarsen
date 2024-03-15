@@ -3,7 +3,6 @@ import { Reveal } from "@/components/reveal";
 import dynamic from "next/dynamic";
 import { Heading2 } from "../typography/headings";
 import "./css/skillsContainer.css";
-import { de } from "date-fns/locale";
 
 const SkillsEffectContainer = dynamic(
   () => import("./components/skillsEffectContainer/skillsEffectContainer"),

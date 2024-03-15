@@ -6,6 +6,7 @@ import { urlFor } from "@/lib/sanity";
 import { format } from "date-fns";
 import { nb } from "date-fns/locale";
 import Image from "next/image";
+import Link from "next/link";
 import { Suspense } from "react";
 import { getProject } from "./api";
 import { CreatedWith } from "./components/createdWith";
@@ -32,15 +33,18 @@ export default async function Page({ params }: { params: { id: string } }) {
                   height={24}
                   alt="logo"
                   className="logo-image"
+                  priority={true}
                 />
               )}
               Published {getSanityDate(project.publishedDate)}
             </p>
           )}
 
-          <Button className="project-page__header__websiteLink">
-            <a href={project.website}>Check out the website</a>
-          </Button>
+          {project?.website && (
+            <Button type="button" className="project-page__header__websiteLink">
+              <Link href={project.website}>Check out the website</Link>
+            </Button>
+          )}
 
           <p className="project-page__header__subtitle">
             {project.bigDescription}
@@ -48,12 +52,13 @@ export default async function Page({ params }: { params: { id: string } }) {
 
           <Image
             src={urlFor(project.titleImage)}
-            alt="alt"
+            alt="title-image"
             className="header-image"
             width={0}
             height={0}
             sizes="70vw"
             style={{ width: "70%", height: "auto" }} // optional
+            priority={true}
           />
           <figcaption
             className="project-page__header__quote"
@@ -81,6 +86,7 @@ export default async function Page({ params }: { params: { id: string } }) {
               <Image
                 alt="mock-image"
                 src={urlFor(project.mockupImage)}
+                className="image-shadow"
                 width={0}
                 height={0}
                 sizes="70vw"
@@ -94,17 +100,18 @@ export default async function Page({ params }: { params: { id: string } }) {
           <div className="images-gallery">
             <h2>More images</h2>
             <p>Gallery showcasing the project</p>
-            <div className="images">
+            <div className="images-gallery__images">
               {project.images.map((image: any, index: number) => {
                 return (
                   <Image
                     key={index}
-                    alt="gallery image"
+                    alt={`gallery image ${index + 1}`}
+                    className="images-gallery__images__gallery-image image-shadow"
                     src={urlFor(image)}
                     width={0}
                     height={0}
-                    sizes="90vw"
-                    style={{ width: "90%", height: "auto" }} // optional
+                    sizes="70vw"
+                    style={{ width: "70%", height: "auto" }}
                   />
                 );
               })}

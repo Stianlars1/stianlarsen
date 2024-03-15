@@ -35,7 +35,7 @@ export const NavItems = () => {
           <Link
             href={"/#about-me"}
             prefetch={false}
-            scroll={false}
+            scroll={true}
             // onClick={handleScrollIntoView}
           >
             About me
@@ -45,7 +45,7 @@ export const NavItems = () => {
           <Link
             href={"/#projects"}
             prefetch={false}
-            scroll={false}
+            scroll={true}
             // onClick={handleScrollIntoView}
           >
             Projects
@@ -55,7 +55,7 @@ export const NavItems = () => {
           <Link
             href={"/cv"}
             prefetch={false}
-            scroll={false}
+            scroll={true}
             // onClick={handleScrollIntoView}
           >
             CV

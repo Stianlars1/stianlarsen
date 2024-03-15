@@ -17,11 +17,11 @@ const myPortableTextComponents: PortableTextComponents = {
         <Image
           src={urlFor(value)}
           alt={value.altText || "No alt text"}
-          className="sanity-content-image"
+          className="sanity-content-image image-shadow"
           width={0}
           height={0}
           sizes="70vw"
-          style={{ width: "70%", height: "auto", margin: "1rem auto 0" }}
+          style={{ width: "70%", height: "auto", margin: "1rem auto 0.5rem" }}
         />
 
         <figcaption

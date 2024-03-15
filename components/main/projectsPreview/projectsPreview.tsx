@@ -35,7 +35,7 @@ export const ProjectsPreview = ({
 
   return (
     <section id="projects" className="projects">
-      <Reveal type="right" delay={0.55}>
+      <Reveal type="right" delay={0.45}>
         <>
           <Heading2 className="projects-title textBackgroundImage">
             {title && title.length > 0 ? title : "Projects Gallery"}
@@ -45,7 +45,7 @@ export const ProjectsPreview = ({
       <Reveal
         type="right"
         width="100%"
-        delay={noDelay ? 0.4 : 0.65}
+        delay={noDelay ? 0.5 : 0.6}
         className={"carousel_wrapper"}
       >
         <Carousel
@@ -83,8 +83,7 @@ export const ProjectsPreview = ({
 
                         <Link
                           href={`/projects/${project.currentSlug}`}
-                          scroll={true}
-                          prefetch={false}
+                          prefetch={true}
                         >
                           <Button variant={"secondary"}>Read more</Button>
                         </Link>
