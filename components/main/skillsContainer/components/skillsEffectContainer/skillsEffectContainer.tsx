@@ -3,29 +3,31 @@ import { useBrowserInfo } from "@/lib/hooks/isNative";
 import { useIsDarkmodeActive } from "@/lib/useIsDarkmodeActive";
 import { useAnimate, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
-import { AlgoliaLogo } from "../../icons/algolia";
-import { AwsLogo } from "../../icons/aws";
-import { ChatGPTLogo } from "../../icons/chatgpt";
-import { CSharpLogo } from "../../icons/csharp";
-import { DotNetLogo } from "../../icons/dotNet";
-import { Figmalogo } from "../../icons/figma";
-import { FirebaseLogo } from "../../icons/firebase";
-import { FramerMotionLogo } from "../../icons/framerMotion";
-import { GithubLogo } from "../../icons/github";
-import { HtmlLogo } from "../../icons/html";
-import { JavaLogo } from "../../icons/java";
-import { JavascriptLogo } from "../../icons/javascript";
-import { KotlinLogo } from "../../icons/kotlin";
-import { LessLogo } from "../../icons/less";
-import { MySqlLogo } from "../../icons/mysql";
-import { NextJsLogo } from "../../icons/nextjs";
-import { NodeLogo } from "../../icons/node";
-import { PythonLogo } from "../../icons/python";
-import { ReactLogo } from "../../icons/react";
-import { SanityLogo } from "../../icons/sanity";
-import { ScssLogo } from "../../icons/scss";
-import { SlackLogo } from "../../icons/slack";
-import { TypescriptLogo } from "../../icons/typescript";
+// import { AlgoliaLogo } from "../../icons/algolia";
+// import { AwsLogo } from "../../icons/aws";
+// import { ChatGPTLogo } from "../../icons/chatgpt";
+// import { CSharpLogo } from "../../icons/csharp";
+// import { DotNetLogo } from "../../icons/dotNet";
+// import { Figmalogo } from "../../icons/figma";
+// import { FirebaseLogo } from "../../icons/firebase";
+// import { FramerMotionLogo } from "../../icons/framerMotion";
+// import { GithubLogo } from "../../icons/github";
+// import { HtmlLogo } from "../../icons/html";
+// import { JavaLogo } from "../../icons/java";
+// import { JavascriptLogo } from "../../icons/javascript";
+// import { KotlinLogo } from "../../icons/kotlin";
+// import { LessLogo } from "../../icons/less";
+// import { MySqlLogo } from "../../icons/mysql";
+// import { NextJsLogo } from "../../icons/nextjs";
+// import { NodeLogo } from "../../icons/node";
+// import { PythonLogo } from "../../icons/python";
+// import { ReactLogo } from "../../icons/react";
+// import { SanityLogo } from "../../icons/sanity";
+// import { ScssLogo } from "../../icons/scss";
+// import { SlackLogo } from "../../icons/slack";
+// import { TypescriptLogo } from "../../icons/typescript";
+import { TechLogos } from "../../icons";
+import { ToolTip } from "../tooltip/tooltip";
 import "./SkillsEffectContainer.css";
 
 const iconsDuration = 0.25;
@@ -358,8 +360,37 @@ const SkillsEffectContainer = () => {
         style={{ backgroundColor: !isDarkmodeActive ? "#d3d3d3" : "#ffffff" }}
       >
         <div id="icons" className={!isMobile ? "desktopLogo" : ""}>
-          <ReactLogo className="react logo dark-bg " />
-          <NextJsLogo className="nextjs logo light-bg" />
+          {Object.keys(TechLogos).map((key: any) => {
+            const { info, logo: Logo } = GetLogo(key);
+            return (
+              <ToolTip
+                key={info.title}
+                index={info.title}
+                techTitle={info.title}
+                websiteUrl={info.website}
+              >
+                <Logo
+                  className={`${info.className} logo ${info.dark ? "dark-bg" : "light-bg"}`}
+                />
+              </ToolTip>
+            );
+          })}
+        </div>
+        {/* <div id="icons" className={!isMobile ? "desktopLogo" : ""}>
+          <ToolTip
+            index={react.title}
+            techTitle={react.title}
+            websiteUrl={react.website}
+          >
+            <ReactLogo className="react logo dark-bg " />
+          </ToolTip>
+          <ToolTip
+            index={nextjs.title}
+            techTitle={nextjs.title}
+            websiteUrl={nextjs.website}
+          >
+            <NextJsLogo className="nextjs logo light-bg" />
+          </ToolTip>
           <TypescriptLogo className="typescript logo" />
           <JavascriptLogo className="javascript logo" />
           <HtmlLogo className="html logo" />
@@ -381,10 +412,14 @@ const SkillsEffectContainer = () => {
           <NodeLogo className="node logo light-bg" />
           <SlackLogo className="slack logo light-bg" />
           <ChatGPTLogo className="chatgpt logo light-bg" />
-        </div>
+        </div> */}
       </div>
     </div>
   );
 };
 
 export default SkillsEffectContainer;
+
+const GetLogo = (logo: keyof typeof TechLogos) => {
+  return { logo: TechLogos[logo].logo, info: TechLogos[logo] };
+};

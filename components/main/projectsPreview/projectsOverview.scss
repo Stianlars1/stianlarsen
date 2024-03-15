@@ -16,15 +16,25 @@
 
   &__list {
     &__item {
+      position: relative;
       &__content {
         max-height: 250px;
         overflow: hidden;
         position: relative;
 
-        h3 {
+        .preview-title {
           color: rgb(248, 250, 252);
           font-size: 2.25rem;
           text-wrap: balance;
+
+          .card-title-link {
+            &::after {
+              content: "";
+              position: absolute;
+              inset: 0;
+              z-index: 1;
+            }
+          }
         }
 
         p {
@@ -44,7 +54,7 @@
     &__list {
       &__item {
         &__content {
-          h3 {
+          .preview-title {
             font-size: 1.2rem;
           }
 

@@ -41,8 +41,17 @@ export default async function Page({ params }: { params: { id: string } }) {
           )}
 
           {project?.website && (
-            <Button type="button" className="project-page__header__websiteLink">
-              <Link href={project.website}>Check out the website</Link>
+            <Button
+              asChild
+              type="button"
+              className="project-page__header__websiteLink"
+            >
+              <Link
+                aria-label={`Go to the website of ${project.title}`}
+                href={project.website}
+              >
+                Check out the website
+              </Link>
             </Button>
           )}
 

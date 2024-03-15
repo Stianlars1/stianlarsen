@@ -23,142 +23,182 @@ import { SlackLogo } from "./slack";
 import { TypescriptLogo } from "./typescript";
 
 export const TechLogos = {
-  ALGOLIA: {
-    logo: AlgoliaLogo,
-    website: "https://www.algolia.com/",
-    title: "Algolia",
-    dark: false,
-  },
-  AWS: {
-    logo: AwsLogo,
-    website: "https://aws.amazon.com/",
-    title: "Amazon Web Services",
-    dark: false,
-  },
-  CHATGPT: {
-    logo: ChatGPTLogo,
-    website: "https://chat.openai.com/",
-    title: "ChatGPT",
-    dark: false,
-  },
-  CSHARP: {
-    logo: CSharpLogo,
-    website: "https://docs.microsoft.com/en-us/dotnet/csharp/",
-    title: "C#",
-    dark: false,
-  },
-  DOTNET: {
-    logo: DotNetLogo,
-    website: "https://dotnet.microsoft.com/",
-    title: ".NET",
-    dark: false,
-  },
-  FIGMA: {
-    logo: Figmalogo,
-    website: "https://www.figma.com/",
-    title: "Figma",
-    dark: false,
-  },
-  FIREBASE: {
-    logo: FirebaseLogo,
-    website: "https://firebase.google.com/",
-    title: "Firebase",
+  REACT: {
+    logo: ReactLogo,
+    website: "https://react.dev/",
+    title: "React",
     dark: true,
+    className: "react",
   },
-  FRAMERMOTION: {
-    logo: FramerMotionLogo,
-    website: "https://www.framer.com/motion/",
-    title: "Framer Motion",
+
+  NEXTJS: {
+    logo: NextJsLogo,
+    website: "https://nextjs.org/",
+    title: "Next.js",
     dark: false,
+    className: "nextjs",
   },
-  GITHUB: {
-    logo: GithubLogo,
-    website: "https://github.com",
-    title: "GitHub",
+
+  TYPESCRIPT: {
+    logo: TypescriptLogo,
+    website: "https://www.typescriptlang.org/",
+    title: "TypeScript",
     dark: false,
+    className: "typescript",
+  },
+
+  JAVASCRIPT: {
+    logo: JavascriptLogo,
+    website: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    title: "JavaScript",
+    dark: false,
+    className: "javascript",
   },
   HTML: {
     logo: HtmlLogo,
     website: "https://developer.mozilla.org/en-US/docs/Web/HTML",
     title: "HTML",
     dark: false,
-  },
-  JAVA: {
-    logo: JavaLogo,
-    website: "https://www.java.com/",
-    title: "Java",
-    dark: false,
-  },
-  JAVASCRIPT: {
-    logo: JavascriptLogo,
-    website: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-    title: "JavaScript",
-    dark: false,
-  },
-  KOTLIN: {
-    logo: KotlinLogo,
-    website: "https://kotlinlang.org/",
-    title: "Kotlin",
-    dark: false,
+    className: "html",
   },
   LESS: {
     logo: LessLogo,
     website: "http://lesscss.org/",
     title: "Less",
     dark: false,
-  },
-  MYSQL: {
-    logo: MySqlLogo,
-    website: "https://www.mysql.com/",
-    title: "MySQL",
-    dark: false,
-  },
-  NEXTJS: {
-    logo: NextJsLogo,
-    website: "https://nextjs.org/",
-    title: "Next.js",
-    dark: false,
-  },
-  NODE: {
-    logo: NodeLogo,
-    website: "https://nodejs.org/",
-    title: "Node.js",
-    dark: false,
-  },
-  PYTHON: {
-    logo: PythonLogo,
-    website: "https://www.python.org/",
-    title: "Python",
-    dark: false,
-  },
-  REACT: {
-    logo: ReactLogo,
-    website: "https://react.dev/",
-    title: "React",
-    dark: true,
-  },
-  SANITY: {
-    logo: SanityLogo,
-    website: "https://www.sanity.io/",
-    title: "Sanity",
-    dark: false,
+    className: "less",
   },
   SCSS: {
     logo: ScssLogo,
     website: "https://sass-lang.com/",
     title: "SCSS",
     dark: false,
+    className: "scss",
   },
+
+  FIREBASE: {
+    logo: FirebaseLogo,
+    website: "https://firebase.google.com/",
+    title: "Firebase",
+    dark: true,
+    className: "firebase",
+  },
+  GITHUB: {
+    logo: GithubLogo,
+    website: "https://github.com",
+    title: "GitHub",
+    dark: false,
+    className: "github",
+  },
+
+  AWS: {
+    logo: AwsLogo,
+    website: "https://aws.amazon.com/",
+    title: "Amazon Web Services",
+    dark: false,
+    className: "aws",
+  },
+
+  MYSQL: {
+    logo: MySqlLogo,
+    website: "https://www.mysql.com/",
+    title: "MySQL",
+    dark: false,
+    className: "mysql",
+  },
+
+  FRAMERMOTION: {
+    logo: FramerMotionLogo,
+    website: "https://www.framer.com/motion/",
+    title: "Framer Motion",
+    dark: false,
+    className: "framerMotion",
+  },
+
+  JAVA: {
+    logo: JavaLogo,
+    website: "https://www.java.com/",
+    title: "Java",
+    dark: false,
+    className: "java",
+  },
+
+  KOTLIN: {
+    logo: KotlinLogo,
+    website: "https://kotlinlang.org/",
+    title: "Kotlin",
+    dark: false,
+    className: "kotlin",
+  },
+
+  ALGOLIA: {
+    logo: AlgoliaLogo,
+    website: "https://www.algolia.com/",
+    title: "Algolia",
+    dark: false,
+    className: "algolia",
+  },
+
+  SANITY: {
+    logo: SanityLogo,
+    website: "https://www.sanity.io/",
+    title: "Sanity",
+    dark: false,
+    className: "sanity",
+  },
+  DOTNET: {
+    logo: DotNetLogo,
+    website: "https://dotnet.microsoft.com/",
+    title: ".NET",
+    dark: false,
+    className: "dotnet",
+  },
+
+  PYTHON: {
+    logo: PythonLogo,
+    website: "https://www.python.org/",
+    title: "Python",
+    dark: false,
+    className: "python",
+  },
+
+  CSHARP: {
+    logo: CSharpLogo,
+    website: "https://docs.microsoft.com/en-us/dotnet/csharp/",
+    title: "C#",
+    dark: false,
+    className: "csharp",
+  },
+
+  FIGMA: {
+    logo: Figmalogo,
+    website: "https://www.figma.com/",
+    title: "Figma",
+    dark: false,
+    className: "figma",
+  },
+
+  NODE: {
+    logo: NodeLogo,
+    website: "https://nodejs.org/",
+    title: "Node.js",
+    dark: false,
+    className: "node",
+  },
+
   SLACK: {
     logo: SlackLogo,
     website: "https://api-slack.com/",
     title: "Slack",
     dark: false,
+    className: "slack",
   },
-  TYPESCRIPT: {
-    logo: TypescriptLogo,
-    website: "https://www.typescriptlang.org/",
-    title: "TypeScript",
+
+  CHATGPT: {
+    logo: ChatGPTLogo,
+    website: "https://chat.openai.com/",
+    title: "ChatGPT",
     dark: false,
+    className: "chatgpt",
   },
 };

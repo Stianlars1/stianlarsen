@@ -12,15 +12,24 @@
   width: 80% !important;
   margin: 0 auto;
 }
+.projects__list__item {
+  position: relative;
+}
 .projects__list__item__content {
   max-height: 250px;
   overflow: hidden;
   position: relative;
 }
-.projects__list__item__content h3 {
+.projects__list__item__content .preview-title {
   color: rgb(248, 250, 252);
   font-size: 2.25rem;
   text-wrap: balance;
+}
+.projects__list__item__content .preview-title .card-title-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 .projects__list__item__content p {
   color: rgb(248, 250, 252);
@@ -31,7 +40,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .projects__list__item__content h3 {
+  .projects__list__item__content .preview-title {
     font-size: 1.2rem;
   }
   .projects__list__item__content p {

@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Autoplay from "embla-carousel-autoplay";
 
 import { Reveal } from "@/components/reveal";
-import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import {
   Carousel,
   CarouselContent,
@@ -76,17 +76,24 @@ export const ProjectsPreview = ({
                           className="preview-title font-semibold"
                           style={{ color: foregroundColor }}
                         >
-                          {project.title}
+                          <Link
+                            href={`/projects/${project.currentSlug}`}
+                            prefetch={true}
+                            aria-label={`Click to read more about the ${project.title} project`}
+                            className="card-title-link"
+                          >
+                            {project.title}
+                          </Link>
                         </h3>
 
                         <p>{project.smallDescription}</p>
 
-                        <Link
-                          href={`/projects/${project.currentSlug}`}
-                          prefetch={true}
-                        >
-                          <Button variant={"secondary"}>Read more</Button>
-                        </Link>
+                        <Badge variant={"secondary"}>
+                          Learn more{" "}
+                          <span style={{ display: "none" }}>
+                            about {project.title}
+                          </span>
+                        </Badge>
                       </CardContent>
                     </Card>
                   </div>
