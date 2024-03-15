@@ -84,7 +84,7 @@ export const ProjectsPreview = ({
                         <Link
                           href={`/projects/${project.currentSlug}`}
                           scroll={true}
-                          prefetch={true}
+                          prefetch={false}
                         >
                           <Button variant={"secondary"}>Read more</Button>
                         </Link>
