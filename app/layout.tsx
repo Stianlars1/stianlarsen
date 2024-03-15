@@ -36,9 +36,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://www.stianlarsen.com",
-    title: "Stian Larsen | Fullstack Developer | Portfolio",
+    title: "Stian Larsen | Full Stack Developer",
     description:
-      "Explore Stian Larsen's Fullstack Development portfolio, a blend of front-end and back-end projects demonstrating expertise in web development and computer engineering. Showcasing professional achievements and innovative personal work, it's a window into his skills and passion for technology.",
+      "Explore Stian Larsen's Full Stack Development portfolio, a blend of front-end and back-end projects demonstrating expertise in web development and computer engineering. Showcasing professional achievements and innovative personal work, it's a window into his skills and passion for technology.",
     images: [
       {
         url: "https://www.stianlarsen.com/android-chrome-512x512.png",
@@ -46,8 +46,14 @@ export const metadata: Metadata = {
         height: 512,
         alt: "Stian Larsen Portfolio",
       },
+      {
+        url: "https://www.stianlarsen.com/android-chrome-192x192.png",
+        width: 192,
+        height: 192,
+        alt: "Stian Larsen Portfolio",
+      },
     ],
-    siteName: "StianLarsen",
+    siteName: "Stian Larsen",
   },
 
   alternates: {
