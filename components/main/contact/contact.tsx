@@ -8,7 +8,7 @@ export const ContactMe = () => {
     <section className="contact">
       <div className="header">
         <Reveal type="up" delay={0.2}>
-          <Heading2>Get in Touch</Heading2>
+          <Heading2 ariaLabel="Contact me form">Get in Touch</Heading2>
         </Reveal>
 
         <Reveal type="up" delay={0.4}>

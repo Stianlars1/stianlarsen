@@ -20,7 +20,10 @@ export const ScrollDownIcon = () => {
 
   return (
     <div className="scroll-down-icon" style={{ opacity: opacity }}>
-      <a href="#about-me">
+      <a
+        href="#about-me"
+        aria-label="This is a shortcut button to go to the first section, which is the about me section."
+      >
         <ChevronDownCircle />
       </a>
     </div>

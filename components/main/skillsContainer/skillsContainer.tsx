@@ -15,7 +15,9 @@ const SkillsContainer = () => {
   return (
     <section className="skills">
       <Reveal type="right" delay={0.55}>
-        <Heading2 className="skills__title">Skills</Heading2>
+        <Heading2 ariaLabel="Skills" className="skills__title">
+          Skills
+        </Heading2>
       </Reveal>
 
       <Reveal type="up" delay={0.65} width="100%">

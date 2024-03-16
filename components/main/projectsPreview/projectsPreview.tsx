@@ -37,7 +37,10 @@ export const ProjectsPreview = ({
     <section id="projects" className="projects">
       <Reveal type="right" delay={0.45}>
         <>
-          <Heading2 className="projects-title textBackgroundImage">
+          <Heading2
+            ariaLabel="Projects overview"
+            className="projects-title textBackgroundImage"
+          >
             {title && title.length > 0 ? title : "Projects Gallery"}
           </Heading2>
         </>

@@ -6,64 +6,10 @@ import { Navbar } from "@/components/main/navbar/navbar";
 import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 import "./layout.css";
+import { mainPageMeta } from "./metadata";
 import { Providers } from "./providers";
 
-export const metadata: Metadata = {
-  title: "Stian Larsen | Fullstack Developer | Portfolio",
-  description:
-    "Discover Stian Larsen's portfolio: A showcase of Fullstack projects, detailed project insights, CV, and contact information. Dive into his journey in technology and innovation.",
-  keywords: [
-    "Fullstack Developer",
-    "Computer Engineer",
-    "Software Developer",
-    "Web Developer",
-    "web design",
-    "sanity.io",
-    "blog",
-    "webperf",
-    "React",
-    "Stian Larsen",
-    "homepage",
-    "web design",
-    "web developer",
-    "webdesign",
-    "responsive web design",
-    "web development",
-  ],
-  creator: "Stian Larsen",
-  publisher: "Stian Larsen",
-
-  openGraph: {
-    type: "website",
-    url: "https://www.stianlarsen.com",
-    title: "Stian Larsen | Full Stack Developer",
-    description:
-      "Explore Stian Larsen's Full Stack Development portfolio, a blend of front-end and back-end projects demonstrating expertise in web development and computer engineering. Showcasing professional achievements and innovative personal work, it's a window into his skills and passion for technology.",
-    images: [
-      {
-        url: "https://www.stianlarsen.com/android-chrome-512x512.png",
-        width: 512,
-        height: 512,
-        alt: "Stian Larsen Portfolio",
-      },
-      {
-        url: "https://www.stianlarsen.com/android-chrome-192x192.png",
-        width: 192,
-        height: 192,
-        alt: "Stian Larsen Portfolio",
-      },
-    ],
-    siteName: "Stian Larsen",
-  },
-
-  alternates: {
-    canonical: "https://www.stianlarsen.com",
-  },
-
-  icons: {
-    icon: "/favicons/favicon.ico",
-  },
-};
+export const metadata: Metadata = mainPageMeta;
 
 export default function RootLayout({
   children,

@@ -25,7 +25,7 @@ export const ToolTip = ({
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
-            <Link href={websiteUrl} key={index}>
+            <Link href={websiteUrl} key={index} aria-label={techTitle}>
               {children}
             </Link>
           </TooltipTrigger>

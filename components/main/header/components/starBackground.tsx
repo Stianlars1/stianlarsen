@@ -97,15 +97,16 @@ const StarsCanvas = () => {
     }
   };
 
-  setTimeout(() => {
-    setShowCanvas(true);
-  }, 500);
-
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
+    const setCanvasTimeout = setTimeout(() => {
+      setShowCanvas(true);
+    }, 20);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      clearTimeout(setCanvasTimeout);
     };
   }, []);
 

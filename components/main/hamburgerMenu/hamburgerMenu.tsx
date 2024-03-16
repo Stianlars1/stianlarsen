@@ -19,13 +19,25 @@ export function HamburgerMenu() {
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>
-            <Menu />
+            <Menu aria-label="Navigation menu" />
           </NavigationMenuTrigger>
           <NavigationMenuContent className="w-[150px]" style={{ right: "0" }}>
             <ul className="grid gap-3 p-3  md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] right-0">
-              <ListItem href="/#about-me" title="About me" />
-              <ListItem href="/#projects" title="Projects" />
-              <ListItem href="/cv" title="CV" />
+              <ListItem
+                aria-label="go to about me section"
+                href="/#about-me"
+                title="About me"
+              />
+              <ListItem
+                aria-label="go to projects preview section"
+                href="/#projects"
+                title="Projects"
+              />
+              <ListItem
+                aria-label="go to my CV / resume"
+                href="/cv"
+                title="CV"
+              />
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>

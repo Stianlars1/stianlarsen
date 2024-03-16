@@ -94,6 +94,7 @@ export const FormContainer = () => {
                       placeholder="Write you're full name"
                       className="margin-top"
                       {...field}
+                      aria-label="Write you're full name"
                     />
                   </FormControl>
                   <FormMessage />
@@ -112,6 +113,7 @@ export const FormContainer = () => {
                     <Input
                       placeholder="Write you're email address"
                       className="margin-top"
+                      aria-label="Write you're e-mail address"
                       {...field}
                     />
                   </FormControl>
@@ -139,6 +141,7 @@ export const FormContainer = () => {
             id="message"
             onChange={(e: any) => setMessage(e.target.value)}
             className="margin-top"
+            aria-label="Write the message you wish to send me!"
           />
         </Reveal>
       </div>
@@ -148,6 +151,7 @@ export const FormContainer = () => {
           className="cta-button"
           variant={"default"}
           onClick={form.handleSubmit(onSubmit)}
+          aria-label="Click to send the message"
         >
           Send mail to reach out
         </Button>
