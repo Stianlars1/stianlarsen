@@ -27,6 +27,44 @@ export const portfolioProject = {
     },
 
     { name: "titleImage", type: "image", title: "Title image" },
+    // { name: "imageDescription", type: "text", title: "Image description" },
+    {
+      name: "imageDescription",
+      title: "Image Description",
+      type: "array",
+      of: [
+        {
+          type: "block",
+          styles: [],
+          lists: [],
+          marks: {
+            decorators: [],
+            annotations: [
+              {
+                name: "link",
+                type: "object",
+                title: "URL",
+                fields: [
+                  {
+                    name: "href",
+                    type: "url",
+                    title: "URL",
+                  },
+                  {
+                    title: "Open in new tab",
+                    name: "blank",
+                    description:
+                      "Read https://css-tricks.com/use-target_blank/",
+                    type: "boolean",
+                  },
+                ],
+              },
+            ],
+          },
+        },
+      ],
+    },
+
     { name: "previewLogo", type: "image", title: "Logo image" },
     { name: "mockupImage", type: "image", title: "Mockup image" },
     {
@@ -34,7 +72,6 @@ export const portfolioProject = {
       type: "string",
       title: "Primary color of the logo image (HEX value)",
     },
-    { name: "imageDescription", type: "text", title: "Image description" },
     { name: "smallDescription", type: "text", title: "Small description" },
     { name: "bigDescription", type: "text", title: "Big description" },
     { name: "website", type: "text", title: "Website url" },

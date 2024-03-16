@@ -10,6 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
 import { getProject } from "./api";
+import SanityContentRenderer from "./components/SanityContentRenderer";
 import { CreatedWith } from "./components/createdWith";
 import SanityContent from "./components/sanityContent";
 import "./projectPage.css";
@@ -78,7 +79,7 @@ export default async function Page({ params }: { params: { id: string } }) {
             className="project-page__header__quote"
             style={{ width: "70%" }}
           >
-            ({project.imageDescription})
+            (<SanityContentRenderer value={project.imageDescription} />)
           </figcaption>
         </header>
 
@@ -105,6 +106,7 @@ export default async function Page({ params }: { params: { id: string } }) {
                 height={0}
                 sizes="70vw"
                 style={{ width: "70%", height: "auto" }} // optional
+                loading="lazy"
               />
             </div>
           </div>
@@ -126,6 +128,7 @@ export default async function Page({ params }: { params: { id: string } }) {
                     height={0}
                     sizes="70vw"
                     style={{ width: "70%", height: "auto" }}
+                    loading="lazy"
                   />
                 );
               })}
