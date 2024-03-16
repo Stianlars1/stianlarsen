@@ -1,7 +1,5 @@
 import { SuspenseLoading } from "@/components/main/loading/loading";
 
-import { format } from "date-fns";
-import { nb } from "date-fns/locale";
 import { Metadata } from "next";
 import { Suspense } from "react";
 import { getAllProjects } from "./api";
@@ -10,7 +8,7 @@ export const metadata: Metadata = {
   title: "Projects",
   description: "My projects and work",
 };
-export default async function ProjectPage() {
+export default async function ProjectsPage() {
   const projects = await getAllProjects();
 
   return (
@@ -38,9 +36,3 @@ export default async function ProjectPage() {
     </Suspense>
   );
 }
-
-export const getSanityDate = (publishedDate: string) => {
-  return format(new Date(publishedDate), "dd.MM.yyyy", {
-    locale: nb,
-  });
-};
