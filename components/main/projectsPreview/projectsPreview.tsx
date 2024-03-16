@@ -13,7 +13,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import React from "react";
 import { Heading2 } from "../typography/headings";
 import "./projectsOverview.css";
@@ -31,7 +30,6 @@ export const ProjectsPreview = ({
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true }),
   );
-  const router = useRouter();
 
   return (
     <section id="projects" className="projects">
