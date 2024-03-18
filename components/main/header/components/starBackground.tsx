@@ -1,6 +1,6 @@
 "use client";
 
-import { useIsDarkmodeActive } from "@/lib/useIsDarkmodeActive";
+import { useIsDarkmodeActive } from "@/lib/hooks/useIsDarkmodeActive";
 import { PointMaterial, Points } from "@react-three/drei";
 import { Canvas, extend, useFrame } from "@react-three/fiber";
 import { Suspense, useEffect, useRef, useState } from "react";

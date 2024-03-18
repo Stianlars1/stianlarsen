@@ -1,6 +1,6 @@
 "use client";
-import { useBrowserInfo } from "@/lib/hooks/isNative";
-import { useIsDarkmodeActive } from "@/lib/useIsDarkmodeActive";
+import { useIsDarkmodeActive } from "@/lib/hooks/useIsDarkmodeActive";
+import { useBrowserInfo } from "@/lib/hooks/useIsNative";
 import { useAnimate, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 // import { AlgoliaLogo } from "../../icons/algolia";
@@ -376,43 +376,6 @@ const SkillsEffectContainer = () => {
             );
           })}
         </div>
-        {/* <div id="icons" className={!isMobile ? "desktopLogo" : ""}>
-          <ToolTip
-            index={react.title}
-            techTitle={react.title}
-            websiteUrl={react.website}
-          >
-            <ReactLogo className="react logo dark-bg " />
-          </ToolTip>
-          <ToolTip
-            index={nextjs.title}
-            techTitle={nextjs.title}
-            websiteUrl={nextjs.website}
-          >
-            <NextJsLogo className="nextjs logo light-bg" />
-          </ToolTip>
-          <TypescriptLogo className="typescript logo" />
-          <JavascriptLogo className="javascript logo" />
-          <HtmlLogo className="html logo" />
-          <LessLogo className="less logo" />
-          <ScssLogo className="scss logo" />
-          <FirebaseLogo className="firebase logo dark-bg" />
-          <GithubLogo className="github logo" />
-          <AwsLogo className="aws logo light-bg" />
-          <MySqlLogo className="mysql logo light-bg" />
-          <FramerMotionLogo className="framerMotion logo light-bg" />
-          <JavaLogo className="java logo light-bg" />
-          <KotlinLogo className="kotlin logo light-bg" />
-          <AlgoliaLogo className="algolia logo light-bg" />
-          <SanityLogo className="sanity logo light-bg" />
-          <DotNetLogo className="dotnet logo light-bg" />
-          <PythonLogo className="python logo light-bg" />
-          <CSharpLogo className="csharp logo light-bg" />
-          <Figmalogo className="figma logo light-bg" />
-          <NodeLogo className="node logo light-bg" />
-          <SlackLogo className="slack logo light-bg" />
-          <ChatGPTLogo className="chatgpt logo light-bg" />
-        </div> */}
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
-import { SuspenseLoading } from "@/components/main/loading/loading";
 import { getpreviewProjects } from "@/components/main/projectsPreview/api";
 import { ProjectsPreview } from "@/components/main/projectsPreview/projectsPreview";
+import { SuspenseLoading } from "@/components/main/suspenseLoading/suspenseLoading";
 import { Button } from "@/components/ui/button";
 import { urlFor } from "@/lib/sanity";
 import { format } from "date-fns";
@@ -42,7 +42,9 @@ export default async function Page({ params }: { params: { id: string } }) {
                   priority={true}
                 />
               )}
-              Published {getSanityDate(project.publishedDate)}
+              <span tabIndex={0}>
+                Published {getSanityDate(project.publishedDate)}
+              </span>
             </p>
           )}
 

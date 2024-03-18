@@ -15,6 +15,7 @@ interface ProjectType {
   previewLogo: any;
   previewLogoBackgroundColor: string;
   mockupImage?: any;
+  publishedDate: string;
 
   imageDescription: any | any[];
   bigDescription: string;
@@ -22,5 +23,4 @@ interface ProjectType {
   content: any;
   techStack?: string;
   website?: string;
-  publishedDate?: string;
 }

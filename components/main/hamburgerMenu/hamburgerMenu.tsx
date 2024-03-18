@@ -30,7 +30,7 @@ export function HamburgerMenu() {
               />
               <ListItem
                 aria-label="go to projects preview section"
-                href="/#projects"
+                href="/projects"
                 title="Projects"
               />
               <ListItem

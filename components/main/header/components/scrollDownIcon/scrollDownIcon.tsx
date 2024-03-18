@@ -8,7 +8,6 @@ export const ScrollDownIcon = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Adjust the factor (e.g., 0.001) to control the rate of fade
       const newOpacity = Math.max(1 - window.scrollY * 0.01, 0);
       setOpacity(newOpacity);
     };

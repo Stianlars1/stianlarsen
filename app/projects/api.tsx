@@ -10,14 +10,20 @@ export const getAllProjects = async (): Promise<ProjectType[]> => {
       previewLogoBackgroundColor,
         mockupImage,
         imageDescription,
+        publishedDate,
 bigDescription,
 images,
 content,
 techStack,
-website,
-publishedDate
+website
     }`;
 
   const data = await sanityClient.fetch(sanityQuery);
-  return data;
+  return getSorted(data);
 };
+
+const getSorted = (projects: ProjectType[]) =>
+  projects.sort(
+    (a: ProjectType, b: ProjectType) =>
+      new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime(),
+  );

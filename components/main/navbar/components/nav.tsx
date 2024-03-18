@@ -43,7 +43,7 @@ export const NavItems = () => {
         </li>
         <li>
           <Link
-            href={"/#projects"}
+            href={"/projects"}
             prefetch={false}
             scroll={true}
             // onClick={handleScrollIntoView}

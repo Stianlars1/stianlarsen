@@ -25,6 +25,16 @@ body main {
 .animate-fadeInUp-1200-400 {
   animation: fadeInUp 1200ms ease-out 400ms 1 normal backwards;
 }
+.animate-fadeInDown-1 {
+  animation: fadeInDown 500ms ease-out 0ms 1 normal backwards;
+}
+
+.animate-fadeInDown-2 {
+  animation: fadeInDown 500ms ease-out 200ms 1 normal backwards;
+}
+.animate-fadeInDown-3 {
+  animation: fadeInDown 500ms ease-out 400ms 1 normal backwards;
+}
 
 @layer base {
   :root {
@@ -86,6 +96,16 @@ body main {
   0% {
     opacity: 0;
     transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
   }
   100% {
     opacity: 1;

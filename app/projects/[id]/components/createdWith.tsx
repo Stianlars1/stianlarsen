@@ -28,24 +28,24 @@ export const CreatedWith = ({ techStack }: { techStack: string }) => {
           if (!!TechLogo) {
             return (
               <>
-                <a
-                  href={websiteUrl}
-                  key={index}
-                  className={`tech-item ${isDark ? "dark" : ""}`}
-                >
-                  {/* <Badge className="tech-name">{techTitle}</Badge> */}
+                {/* <Badge className="tech-name">{techTitle}</Badge> */}
 
-                  <TooltipProvider>
-                    <Tooltip>
-                      <TooltipTrigger>
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <a
+                        href={websiteUrl}
+                        key={index}
+                        className={`tech-item ${isDark ? "dark" : ""}`}
+                      >
                         <TechLogo className="tech-logo" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>{techTitle}</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </a>
+                      </a>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>{techTitle}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               </>
             );
           }

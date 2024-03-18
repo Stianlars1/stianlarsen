@@ -1,0 +1,27 @@
+.projects-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  width: 100%;
+}
+.projects-wrapper__item {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid hsl(var(--border));
+  border-radius: 1rem;
+  padding: 1rem;
+  min-height: 150px;
+}
+.projects-wrapper__item__title {
+  font-size: 1.2rem;
+}
+.projects-wrapper__item__description {
+  font-size: 0.895rem;
+}
+.projects-wrapper__item:hover,
+.projects-wrapper__item:focus {
+  border-color: white;
+} /*# sourceMappingURL=projectsWrapper.css.map */

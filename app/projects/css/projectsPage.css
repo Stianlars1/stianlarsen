@@ -1,0 +1,25 @@
+.projects-page {
+  min-height: calc(100vh - 100px - 200px);
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin: 40px 0 32px;
+}
+.projects-page__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+.projects-page__header__title {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+.projects-page__header__description {
+  font-size: 1rem;
+  margin-bottom: 0;
+  text-align: center;
+  text-wrap: pretty;
+} /*# sourceMappingURL=projectsPage.css.map */

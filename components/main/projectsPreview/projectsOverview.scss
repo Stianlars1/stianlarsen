@@ -14,6 +14,20 @@
     margin: 0 auto;
   }
 
+  .projects-title {
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      text-decoration: underline;
+
+      &:hover {
+        color: hsl(var(--primary));
+      }
+    }
+  }
+
   &__list {
     &__item {
       position: relative;

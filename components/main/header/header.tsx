@@ -1,6 +1,5 @@
 import { HeaderH1Title } from "./components/h1";
 import { ScrollDownIcon } from "./components/scrollDownIcon/scrollDownIcon";
-
 import "./header.css";
 
 export const Header = () => {

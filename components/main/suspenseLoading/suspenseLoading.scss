@@ -1,0 +1,7 @@
+.suspense-loader {
+  background-color: hsl(var(--background));
+  .suspense-loader-icon,
+  .suspense-loader-text {
+    color: hsl(var(--foreground));
+  }
+}

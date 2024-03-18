@@ -27,7 +27,6 @@ export const portfolioProject = {
     },
 
     { name: "titleImage", type: "image", title: "Title image" },
-    // { name: "imageDescription", type: "text", title: "Image description" },
     {
       name: "imageDescription",
       title: "Image Description",

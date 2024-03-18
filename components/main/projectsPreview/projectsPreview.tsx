@@ -12,6 +12,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Link1Icon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import React from "react";
 import { Heading2 } from "../typography/headings";
@@ -39,7 +40,14 @@ export const ProjectsPreview = ({
             ariaLabel="Projects overview"
             className="projects-title textBackgroundImage"
           >
-            {title && title.length > 0 ? title : "Projects Gallery"}
+            <Link
+              href={"/projects"}
+              aria-label="Click here to go to the projects page, or keep going to get a small preview of them all"
+              scroll={true}
+            >
+              {title && title.length > 0 ? title : "Projects Gallery"}
+              <Link1Icon />
+            </Link>
           </Heading2>
         </>
       </Reveal>
