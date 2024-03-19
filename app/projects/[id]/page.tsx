@@ -14,15 +14,24 @@ import SanityContentRenderer from "./components/SanityContentRenderer";
 import { CreatedWith } from "./components/createdWith";
 import SanityContent from "./components/sanityContent";
 import "./projectPage.css";
-
-export const metadata: Metadata = {
-  title: "Projects",
-  description: "My projects and work",
+type Props = {
+  params: { id: string };
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const slug = params.id.replace(/-/g, " ");
+  const project = await getProject(params.id);
+
+  return {
+    title: slug,
+    description: project.smallDescription,
+  };
+}
+
 export default async function Page({ params }: { params: { id: string } }) {
   const project = await getProject(params.id);
   const projects: PreviewProjectsType[] = (await getpreviewProjects()).filter(
-    (project: PreviewProjectsType) => project.currentSlug !== params.id,
+    (project: PreviewProjectsType) => project.currentSlug !== params.id
   );
 
   return (
