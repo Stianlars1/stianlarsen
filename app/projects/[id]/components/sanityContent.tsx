@@ -5,6 +5,7 @@ import React, { ReactElement } from "react";
 import { urlFor } from "@/lib/sanity";
 import { PortableTextBlock } from "@portabletext/types";
 import Image from "next/image";
+import Link from "next/link";
 
 interface SanityContentProps {
   value: PortableTextBlock[]; // This should match the structure of your Portable Text content
@@ -51,9 +52,16 @@ const myPortableTextComponents: PortableTextComponents = {
         ? "noreferrer noopener"
         : undefined;
       return (
-        <a href={value.href} rel={rel}>
+        <Link
+          href={value.href}
+          rel={rel}
+          style={{
+            textDecoration: "underline",
+            color: "hsl(var(--primary))",
+          }}
+        >
           {children}
-        </a>
+        </Link>
       );
     },
   },
