@@ -11,8 +11,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         ? new Date(publishedDate).toISOString()
         : new Date().toISOString(),
       priority: 0.9,
-      changeFrequency: "monthly",
-    }),
+      changeFrequency: "daily",
+    })
   );
 
   const staticRoutes: MetadataRoute.Sitemap = ["", "/projects", "/cv"].map(
@@ -20,8 +20,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${BASE_URL}${route}`,
       lastModified: new Date().toISOString(),
       priority: 1,
-      changeFrequency: "monthly",
-    }),
+      changeFrequency: "daily",
+    })
   );
 
   return [...staticRoutes, ...dynamicRoutes];

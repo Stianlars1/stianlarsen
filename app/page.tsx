@@ -1,17 +1,14 @@
+export const revalidate = 0; // Disable caching
+export const dynamic = "force-dynamic";
+
 import { AboutMe } from "@/components/main/about-me/aboutMe";
 import { ContactMe } from "@/components/main/contact/contact";
 import StarsCanvas from "@/components/main/header/components/starBackground";
 import { Header } from "@/components/main/header/header";
 import { getpreviewProjects } from "@/components/main/projectsPreview/api";
 import { ProjectsPreview } from "@/components/main/projectsPreview/projectsPreview";
-import dynamic from "next/dynamic";
+import SkillsContainer from "@/components/main/skillsContainer/skillsContainer";
 
-const SkillsContainer = dynamic(
-  () => import("@/components/main/skillsContainer/skillsContainer"),
-  {
-    ssr: false,
-  },
-);
 export default async function Home() {
   const projects: PreviewProjectsType[] = await getpreviewProjects();
   return (

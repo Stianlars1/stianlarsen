@@ -10,11 +10,11 @@ export const ProjectsWrapper = ({ projects }: { projects: ProjectType[] }) => {
       {projects.map((project) => {
         const foregroundColor = darkenColor(
           project.previewLogoBackgroundColor,
-          -50,
+          -50
         );
         const darkenedBackgroundColor = darkenColor(
           project.previewLogoBackgroundColor,
-          30,
+          30
         );
         return (
           <Link
