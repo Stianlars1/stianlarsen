@@ -48,7 +48,8 @@ const myPortableTextComponents: PortableTextComponents = {
   },
   marks: {
     link: ({ children, value }) => {
-      const rel = !value.href.startsWith("/")
+      console.log("marks value: ", value);
+      const rel = !value?.href?.startsWith("/")
         ? "noreferrer noopener"
         : undefined;
       return (

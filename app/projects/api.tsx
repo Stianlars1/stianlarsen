@@ -25,5 +25,5 @@ website
 const getSorted = (projects: ProjectType[]) =>
   projects.sort(
     (a: ProjectType, b: ProjectType) =>
-      new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime(),
+      new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime()
   );

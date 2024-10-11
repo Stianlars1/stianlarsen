@@ -4,4 +4,4 @@ Disallow: /admin
 
 # Allow all crawlers
 User-agent: *
-Allow: /
+Allow: /git

@@ -5,6 +5,8 @@ import { getAllProjects } from "./api";
 import { ProjectsWrapper } from "./components/projectsWrapper";
 import "./css/projectsPage.css";
 
+export const revalidate = 0; // Disable caching
+export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Projects",
   description: "My projects and work",
